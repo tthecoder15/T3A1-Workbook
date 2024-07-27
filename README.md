@@ -34,6 +34,28 @@ Ernst, M. (2024b) _[Version control concepts and best practices](https://homes.c
 - conceptual, good lists that outline it, reference
 - List discuss and demonstrate 6 software quality characteristics
 
+When designing software, a project typically involves by considering an issue, understanding why it occurs and generating a tool to solve it. Its apparent that the tool needs to function in its developmental context but, creating quality software requires a more robust solution that can work in varied contexts over a longer period of time. Boehm's (1976) software quality model and the ISO's (International Organization for Standardization) 25010 publication (ISO 25000, 2022) provide frameworks for describing and designing quality software.
+
+Both Boehm and the ISO describe the importance of a software being portable. Portablility refers to a software's ability to function on varied machines with varied hardware specifications. When designing a tool, developer's must consider the contexts they are designing within and the capability of their development hardware. It is little use to potential users if their computers or internet connections cannot operate a program without it causing an error due to freezing or timeout. Developer's must consider their target users and the tools they will already have access to.
+
+Notably, Boehm describes how portability often works in opposition to efficiency as a program can be optimised for a particular system but function worse on other systems (Boehm, 1976). Efficiency in quality software describes utilising the available resources for that software to run. This can refer to processing power but also refers to other resources which aid the software's function. A common example of efficiency is designing web applications for desktops versus mobiles. Efficiency in this context refers not only to processing power but also efficiency in communicating information and utilising the screen space by making a responsive layout. Quality software considers the tools available in the different contexts that the software will be used in and maximises them.
+
+Portability also complements flexibility and the ability for a software to be scaled (ISO 25000, 2022). Software developers need to consider how their tools will be implemented into workflows and how much data they may need to handle. Quality software can be used across systems, installed easily and handle varying data loads.
+
+Both models also emphasise interaction capability (ISO 25000, 2022) and the ease of use of software. ISO furthers usability and describes that a quality software must be reasonable to learn as well. Usability is a fundamental concern of software design as the tool, in essence, does not work if individuals cannot use it. Learnability is an important consideration however, as it accentuates the need to understand user contexts. Understanding who will use a tool allows developers to tune the interface or functionality so that it is logical to users.
+
+One point of difference between the two models is that the ISO 25010 describes security as a neccessity of quality software (ISO 25000, 2022) whereas Boehm's does not. This can likely be attributed to an increased emphasis on data privacy in the internet age. When designing software, developers must consider the risks that the tool generates for users including system vulnerabilities and the storage of their data. It is essential that users are guaranteed confidentiality when using a software as privacy is as much of a resource to consider for users as time and financial costs. Security also encompasses data integrity and user confirmation that saved data is consistent and reliable. Software must implement reliable data storage and access to be considered effective.
+
+Finally, both models value maintainability and the ease that software can be updated. At a coding level, maintainability means producing code that is clearly modularised and formatted so that bugs can be fixed cleanly and without large overhauls. At the user level, maintainability requires users to be able to install updates easily or update their own processes using the app logically.
+
+Creating quality software requires clear planning and considerate implementation so that tools function as intended in varied, future-proof contexts. Developers must strive to create portable, efficient, flexible, useable, maintainable and secure software and, to do so, must consider the different contexts that the software will be used in.
+
+### References
+
+ISO 25000 (2022) _[ISO/IEC 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010)_, ISO 25000 website, accessed 27 July 2024.
+
+Boehm, B. W., Brown, J. R. and Lipow, M., (1976). ‘Quantitative Evaluation of Software Quality’, _Proceedings of the 2nd international conference on Software engineering_, pp. 592-605. DOI: 10.5555/800253.807736.
+
 ## Q3. Outline a standard high level structure for a MERN stack application and explain the components /6
 
 - REACT, express data, Mongo, Node, how the techs work together to make the app
@@ -83,6 +105,12 @@ Ernst, M. (2024b) _[Version control concepts and best practices](https://homes.c
 ## Q12. Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
 - Demonstrates an extensive ability to manipulate JSON
+
+Amazon Web Services (2024) _[What is SQL?](https://aws.amazon.com/what-is/sql/)_, AWS website, accessed 24 May 2024.
+
+Hanlon, M., Dooley, R., Mock, S., Dahan, M., Nuthulapati, P. & Hurley, P. (2011). _Benefits of NoSQL databases for portals & science gateways_. DOI: [10.1145/2016741.2016780](https://doi.org/10.1145/2016741.2016780).
+
+PostgreSQL Documentation (n.d.) _[13.1 Introduction: Chapter 13 Concurrency Control](https://www.postgresql.org/docs/16/mvcc-intro.html)_, PostgreSQL website, accessed 6 June 2024.
 
 ---------------------------------------------------SUBMISSION---------------------------------------------------
 
