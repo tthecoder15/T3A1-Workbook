@@ -88,11 +88,27 @@ MongoDB (n.d.) _[Mern Stack Explained](https://www.mongodb.com/resources/languag
 - technical, soft skills too
 - Effectively describes a range of skills and knowledge required by IT workers to complete a quality web development project
 
+To design and create a website for a business, a development team needs a specific understanding of the business' requirements. Considering Boehm's (1976) model for quality software, a website should be designed considering the contexts that it will be engaged with. Firstly, the development team must understand what functionality the website needs to have to aid the business. By extension, the team needs to understand the typical website user so that the website can be designed to suit their hardware and interface requirements. For example, a general practice business will likely need to feature contact information, service offerings and information about the clinic's doctors. In addition, the business may require additional functionality such as an online booking system implemented with dynamic webpages and form submissions, or, the company may want to keep these systems on site for simplicity. By extension, depending on the clinic's customers or location, the typical user may have limited website literacy and may require a simpler user interface, or the business may want a sophisticated and sleek interface to attract a different customer type. These requirements should be considered to ensure the website fulfills Boehm's recommendations for usability and portability across devices. The team also needs to understand the company's maintenance plans following the websites creation to ensure that it is appropriately future-proofed. If the business does not plan on updating the site frequently, the team needs to ensure the layout and functionality is robust as web technologies advance, a consideration that would shape the entire design process. It is key that a team understands the contexts that their website will be used in to successfully design and implement it.
+
+There are distinct technical skills a development team requires to create a website using a particular technology stack. In many contexts, the MERN stack provides all of the tools required to make an approptiate small business' website. To use the MERN stack, the design team must know how to use Javascript as well as the specific syntax of MongoDB, Express, React JS and how to configure and use Node.js. Besides these defined skills, there are complementary understandings the team must apply to use these tools. When designing the back-end and routing for the website, the team members must implement RESTful practices so that the website functions in a stable and maintainable way. This includes defining routes that are logical and delivering data in a consistent way. Notably, creating a RESTful API requires a reliable database and consistant storage structure. Because MongoDB is a NoSQL database, the development team has full control over how instances are recorded which allows for quick initialisation but can also permit messy formatting. For these reasons, the development team must have a technical knowledge of the MERN stack but also a conceptual knowledge of how to design the website's database and backend to be consistent and maintainable.
+
+In addition to project understanding and technical knowledge, the team members require project management and planning skills. In many contemporary projects, Agile methodologies are used to set goals, manage deadlines and respond to project challenges as they arise. Adopting Agile techniques including using Kanban boards to visually communicate progress and prioritise tasks, scheduling daily stand-ups and feedback sessions and dedicating resources based on team agreement are all beneficial practices that will bolster a teams productivity (Moe, et. all, 2014). Whilst a development team does not need to know Agile project management specifically, the team requires a structured division of work to ensure all tasks can be completed on schedule. In a technical context, project management requires a team to develop and enforce source control habits. Using Git or an alternative software, team members must know how to back-up and share their work and how to archive their progress with succinct commit messages and pull requests.
+
+When creating a website, a development team requires technical and conceptual skills to handle the design, programming and project management elements of the task.
+
+### References
+
+Boehm, B. W., Brown, J. R. and Lipow, M., (1976). ‘Quantitative Evaluation of Software Quality’, _Proceedings of the 2nd international conference on Software engineering_, pp. 592-605. DOI: 10.5555/800253.807736.
+
+Brede Moe, N., Dingsøyr, T., Dyba, T. (2014) 'Agile Project Management', in Ruhe, G., Wohlin, C. (eds.) _Software Project Management in a Changing World_. Berlin: Springer-Verlag, pp. 277-300.
+
 ## Q5. With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges /6
 
 - assignments, side projects
 - challenges you overcame extrapolated
-- Effectively describes a range of skills and knowledge used to complete a project.
+- Effectively describes a range of skills and knowledge used to complete a project
+
+- when developing our CLI app, I required a variety of technical knowledge to create the functionality that I wanted
 
 ## Q6. With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature /6
 
