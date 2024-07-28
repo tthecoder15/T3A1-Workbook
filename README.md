@@ -108,12 +108,31 @@ Brede Moe, N., Dingsøyr, T., Dyba, T. (2014) 'Agile Project Management', in Ruh
 - challenges you overcame extrapolated
 - Effectively describes a range of skills and knowledge used to complete a project
 
-- when developing our CLI app, I required a variety of technical knowledge to create the functionality that I wanted
+Designing and creating a web server API using Flask and Postgres was a project that required distinct technical and conceptual skills. The project featured these tools as well as SQLAlchemy and marshmallow and was designed as parent-teacher communication tool that allowed each side to make comments about students, parents to enter contact information for their child's attendances and endpoints for teachers to access this contact information.
+
+A core challenge creating the application was designing the database efficiently to allow for RESTful endpoints. When I began this process, I found it challenging to identify what data needed to be stored and how to best structure the tables. Specifically, the task of normalising the data was daunting. To handle this macro challenge, I decided to break down the task down into its technical and conceptual elements. First, I found it helpful to research similar API tools that childcare businesses used to facilitate their data and communication. After collecting references, I identified the features that my application needed by reading reviews and imagining use cases. This allowed me to identify improvements I could incorporate into my API such as improving the security of the app by reducing the amount of input data required. To refine the tables, I completed additional research into ERD diagrams and compared my work to industry examples. This allowed me to develop my understanding of ERD design and normalise the database, step-by-step, in a way that prevented technical challenges in the implementation stages. In addition, I continued to review the table design as I designed the API's endpoints which helped identify flaws which I was able to fix such as using a merge table to link contact, children and attendance data in a distinct table to prevent duplicate data.
+
+In addition, to the database design skills that the project required, the task required me to improve my ability using models and schemas. Connecting the Flask routes to the database was simple to implement yet, as I continued programming, I found that my models allowed users to input flawed data which would raise errors. marshmallow's validation tools proved a powerful and convenient way to prevent these errors but, when I began the project, I only had a rudimentary understanding of how they could be applied. In particular, there were input routes where I wanted users to have to choose from one of three values. In this instance, I was able to refer to the reference documentation and find the OneOf() validator which was perfect for the situation. In addition, I had trouble handling datatype errors which would arise when POST requests were submitted with formatting errors but were not particularly descriptive when printed to the console. Again, I referred to SQLAlchemy and marshmallow's documentation and online forums to identify the issue and brainstorm solutions. Two notable examples were when submitting a phone number beginning with a zero, Python would disregard the zero which, in turn, would raise a marshmallow validator error. This was challenging to identify but, after logging the data at each stage, I was able find the error and convert the number input to a string and add the zero knowing that marshmallow could interpret numbers or strings. The other example was submitting a boolean value for an "is_admin" attribute. The request body would inconsistently be interpretted and it took lengthy troubleshooting to recognise the error would arise when the boolean was submitted without being wrapped in appostrophes. Each of these issues required patient research and a more through understanding of Flask, marshmallow and SQLAlchemy behaviours. Preventing these issues at the API level makes the project more robust and easy to incorporate into a front-end application.
+
+Designing and creating a server API required technical knowledge of how to use a Flask, PostgreSQL, SQLAlchemy and marshmallow tech stack as well as the ability to troubleshoot errors in a pragmatic way. In addition, a key challenge of creating a successful API is designing the database in a considered way. With each challenge, I was able to overcome the problem with research and patience.
+
+### References
+
+
 
 ## Q6. With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature /6
 
 - here's what I would do differently
 - Evaluates effectiveness of knowledge and skills accurately, providing examples, and providing an insightful improvement on each skill
+
+- when developing a Python CLI app, I required a variety of technical knowledge to create the functionality that I wanted
+- the app works by presenting the user a string of text describing a mystery object, a pokemon card
+- the user can then choose between more hints or geuss
+- the application features a scoreboard which uses CSV
+- the app presents data from a JSON file and features modularised, reusable code to allow for two game modes and scoreboards
+- Agile project management, didn't know how to do it, had to adjust my methodology as I went
+- Particular challenge due to time management, the app was more complex than I realised
+- testing skills would be better
 
 ## Q7. Explain control flow, using an example from the JavaScript programming language /6
 
