@@ -61,6 +61,28 @@ Boehm, B. W., Brown, J. R. and Lipow, M., (1976). ‘Quantitative Evaluation of 
 - REACT, express data, Mongo, Node, how the techs work together to make the app
 - Shows almost flawless understanding of the high level structure of the app
 
+The MERN stack is a popular collection of technologies which can be used to create a dynamic web application. MERN stands for MongoDB, Express, React JS and Node.js, four tools which all use Javascript syntax and complimentarily fill the roles required to generate webpages, handle interactions with them and serve and store their data.
+
+React JS is the front-end component of the MERN stack and is a web framework used to create fast-loading, responsive webpages. React uses JSX, a Javascript syntax extension which hybridises JS with HTML so that users can easily describe stateful webpages. React uses component-based design where the different elements of a website are modularised to be reused like building blocks and pieced together to create a webpage. React is powerful thanks to its underlying virtual DOM technologies. The virtual DOM is a recreation of the DOM (Document Object Model) which describes the elements of a webpage as a JS object. React creates an exact replica of the DOM as it is rendered as well as a new copy whenever the webpage is to be changed. The two iterations are compared to identify where the changes take place so that the true DOM can be updated compartmentally to reflect the changes (GeeksforGeeks, 2024). This is different to the true DOM which requires an entire reload when the page changes and this allows React display pages more efficiently.
+
+Express is a Node package used to create APIs and handle routing configuration, facilitating the connection and interaction between a web application's front-end and back-end. Using Express, a developer is able to define routers which describe how a webpage will handle and respond to the different HTTP request types at defined URIs. Express allows for the use of middleware to handle requests and manipulate any data they are sent with or lack. A typical middleware used in Express is a converts a request's body into JSON, so that it can be sanitised and forwarded to a database or verified for correctness. Express is particularly effective for developer's because its syntax and router objects allow for DRY, reuseable code elements which speeds up development (GeeksforGeeks, 2023).
+
+Node.js is a runtime environment which allows the Express scripting of a web application to run. Express is built using Javascript which was designed to be executed by web browsers. Node provides an alternative way to run JS scripts so that the webpage and server-side logic can be executed concurrently and written in the same language. In addition, Node.js is open-sourced and has a large developmental community that generates packages to extend server-side capabilities.
+
+Finally, MongoDB is the database layer of the MERN stack. MongoDB is a NoSQL database that can be interacted with using Javascript syntax. MongoDB databases can be run locally or using MongoDB Inc.'s cloud services. MongoDB is particularly valued due to its flexible data structures which allow developers to define, store and query instances without the strict formatting required by SQL databases (GeeksforGeeks, 2023). In the MERN stack, MongoDB is used to store the data that populates a page and to record users' posted data.
+
+In combination, the React layer provides the tools to create webpages for users to interact with, the Express layer handles the user's interactions by requesting the appropriate resources, Node.js allows Express to execute and offers additional capabilities and MongoDB stores data for the user to interact with. Besides effective performance, the key element that makes the MERN stack popular is its consistent use of Javascript eliminating script conversions and allowing developers to easily learn the software syntax (MongoDB, n.d. & Kadam et. al., 2023).
+
+### References
+
+GeeksforGeeks (2023) _[MERN Stack](https://www.geeksforgeeks.org/mern-stack/)_, GeeksforGeeks website, accessed 27 July 2024.
+
+GeeksforGeeks (2024) _[ReactJS Virtual DOM](https://www.geeksforgeeks.org/reactjs-virtual-dom/)_, GeeksforGeeks website, accessed 28 July 2024.
+
+Kadam, Y., Goplani, A, Mattoo, S., Gupta, S. K., Amrutkar, D., Dhanke, J. (2023). 'Introduction to MERN Stack & Comparison with Previous Technologies', _European Chemical Bulletin_ 12(4), pp. 14382-14386. DOI: 10.48047/ecb/2023.12.si4.1300.
+
+MongoDB (n.d.) _[Mern Stack Explained](https://www.mongodb.com/resources/languages/mern-stack-tutorial)_, MongoDB website, accessed 27 July 2024.
+
 ## Q4. A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project? /6
 
 - technical, soft skills too
