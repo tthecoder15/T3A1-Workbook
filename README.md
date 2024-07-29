@@ -118,8 +118,6 @@ Designing and creating a server API required technical knowledge of how to use a
 
 ### References
 
-
-
 ## Q6. With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature /6
 
 - here's what I would do differently
@@ -141,6 +139,66 @@ Fernandez, D. J. and Fernandez, J. D. (2008) ‘Agile Project Management —Agil
 
 - if statements
 - Provides a thorough explanation of control flow in programming
+
+When Javascript code is executed, it is typically interpreted line-by-line in sequential order so that the first line will execute before the second. This sequencing can be altered by using control flow statements which execute code, not neccessarily in sequence, based on described conditions (MDN Web Docs, 2024a). In Javascript, the ```if```, ```if else```, ```switch```, ```ternary operator``` and ```for loops``` are all techniques that can alter the order that a script is executed including skipping lines (MDN Web Docs, 2024b).
+
+The ```if``` statement evaluates whether a condition is true and, if so, executed a code bloke before continuing to execute the script sequentially. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are true. ```if``` and ```if else``` statements require the use of operands that return true or false based on whether the values compared are truthy or falsy. In Javascript, a function that returns false, undefined, null, 0, NaN or "", or a variable assigned one of these values, is considered falsy and will cause a particular if condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and values whilst loose equality will complete a type conversion to see if the values are the same when the data is the same type.
+
+Below is an example of control flow and equality types:
+
+``` Javascript
+function eval () {
+var evaluation = ""
+var answer = "true"
+if (evaluation) {
+    return
+}
+else if (answer === true) {
+    evaluation = "Truly true"
+    return
+}
+else if (answer == true) {
+    evaluation = "Sort of true"
+    return
+}
+else {
+    evaluation = "Not, in any way, true"
+    return
+}
+console.log(evaluation)
+}
+
+eval()
+
+```
+
+```eval``` first initialises the variables ```evaluation``` and ```answer``` and then begins evaluations on the variables. The first if statement checks if ```evaluation``` is a truthy value which, because it is a blank string, is not true so it will not execute. The second if statement checks if answer is a boolean value equaling ```true```, however, it will not execute because answer is a string rather than a boolean so this evaluation is false. The third if statement converts answer to a boolean and evaluates to true because the values are loosely equal. ```evaluation``` is then set to "Sort of true" and the following else statement is ignored and the rest of the block statement executes so the console prints "Sort of true". The else statement would execute if none of the other if statements were true but, in this example is not neccessary and does not execute.
+
+Other control conditional flow statements are the ```switch``` statement which describes the different possible conditions a variable could fulfill and executes the matching code block or a default code block. The ```ternary operator``` is an operator that checks for a condition and executes a "true" block or a "false" block depending on what the condition evaluates to.
+
+Loops are an alternative to conditional statement control flow and can be used to execute code that deviates from line-by-line execution. Javascript has various ```for``` loops as well as ```while``` loops. ```for``` loops repeat a block of code until it evaluates to false such as iterating through an array until there are no more values that have not been iterated. ```while``` statements loop a block of code until a condition evaluates to false. Alternatively, ```do...while``` loops execute a block of code before evaluating a condition, stopping when the condition evaluates falsely (MDN Web Docs, 2023b).
+
+For example:
+
+``` Javascript
+let counter = 0;
+do {
+    counter += 2;
+    console.log(counter)
+} while (counter != 10)
+```
+
+In this example, ```counter``` is initialised as 0. The ```do``` block adds 2 to ```counter``` and prints the updated value then evaluates whether counter does not equal 10. The ```do``` block will thus loop 5 times until counter equals 10 then continue the script.
+
+### References
+
+MDN Web Docs (2024a) _[Control flow](https://developer.mozilla.org/en-US/docs/Glossary/Control_flow)_, MDN Docs Glossary website, accessed 29 July 2024.
+
+MDN Web Docs (2024b) _[Control flow and error handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)_, MDN Docs Glossary website, accessed 29 July 2024.
+
+MDN Web Docs (2023a) _[Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)_, MDN Docs Glossary website, accessed 29 July 2024.
+
+MDN Web Docs (2023b) _[Loops and iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#do...while_statement)_, MDN Docs Glossary website, accessed 29 July 2024.
 
 ## Q8. Explain type coercion, using examples from the JavaScript programming language /6
 
