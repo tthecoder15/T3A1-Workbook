@@ -294,6 +294,91 @@ MDN Web Docs (2024b) _[Logical AND (&&)](https://developer.mozilla.org/en-US/doc
 - types, unique to JS, show what the concept is and how to use it
 - Provides a thorough explanation of data types in programming
 
+(GeeksforGeeks, 2024)
+
+- primitive data types - number, bigInt, string, boolean, null, underfined, symbol
+- non-primitive types - object, array, function
+- null can only be null, underfined is a variable not assigned a value
+- bigint is an object used to represent whole numbers larger than 253-1
+- number are integer and floating-point
+- special numbers 'infinity', '-infinity', NaN
+- strings allow for string interpolation ` ${} `
+- boolean true or false
+- null represents nothing or value inknown
+- null is an object
+- Symbol are new as of ES6, return unique identifiers can be used to add unique property keys that won't collide with other keys, used for data encapsulation or hiding
+
+(MDN Web Docs, 2024b )
+
+- bigInt used for values greater than 2^53
+- bigint declarded by adding n to the end of a string
+- big int can allow a user to add past the maximum values on JS
+- stops rounding and allows values to be added on past the limits without rounding
+- can be loosely compared against number type but not strictly
+
+In Javascript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be assigned as one of these data types or as an object. The primitive data types have a variety of methods and behaviours fundamentally to them that impact how they can be used within Javascript syntax. Javascript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). A variable's datatype can be checked using the built-in ```typeof()``` function.
+
+For example:
+
+```Javascript
+let example = "cat"
+typeof(example)
+// Returns 'string' 
+example = 1
+typeof(example)
+// Returns 'number'
+```
+
+There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified as a number. These qualities should be noted when using the loose equality operator.
+
+For example:
+
+```Javascript
+let example1 = null
+typeof(example1)
+// Returns 'object'
+let example2 = undefined
+typeof(example2)
+// Returns 'undefined'
+let example3 = NaN
+typeof(example3)
+// Returns 'number'
+```
+
+Primitive data types are immutable meaning that a primitive value cannot be altered. However, objects are mutable and can store primitive data that can be changed later. Objects can be considered as a collection of properties for this reason. In addition, primitive data types have methods associated with them that can assist in objects or variable that contain them.
+
+```Javascript
+let tree = "oak"
+tree[0] = "bark"
+console.log(tree)
+/// Console shows 'oak' because a string is immutable
+tree = "bark"
+console.log(tree)
+/// Console shows 'bark'
+/// Tree variable can be reassigned
+let forest = {trees: "oak"}
+/// Assigns forest an object value with a key pair tree: "oak"
+console.log(forest.trees)
+/// Console shows "oak"
+forest.trees = "pine"
+console.log(forest.trees)
+/// Console shows "pine"
+forest.trees.concat(" and redgums") 
+/// Uses string's inbuilt concat() method
+console.log(forest.trees)
+/// Console shows "oak and redgums"
+```
+
+The various primitive types of Javascript are used to handle distinct values with unique properties. For this reason, they all have specific methods associated with them used to extend their functionality. Each primitive type has associated behaviour with the Javascript language as well and these data types, and their properties, can be used in objects to create advanced funcitonality.
+
+### References
+
+GeeksforGeeks (2024) _[JavaScript type coercion explained](https://www.geeksforgeeks.org/javascript-data-types/)_, GeeksforGeeks website, accessed 30 July 2024.
+
+MDN Web Docs (2024a) _[JavaScript data types and data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)_, MDN Web Docs website, accessed 30 July 2024.
+
+MDN Web Docs (2024b) _[BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)_, MDN Web Docs website, accessed 30 July 2024.
+
 ## Q10. Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
 - explain a concept, how to use it
