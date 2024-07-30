@@ -142,7 +142,7 @@ Fernandez, D. J. and Fernandez, J. D. (2008) ‘Agile Project Management —Agil
 
 When Javascript code is executed, it is typically interpreted line-by-line in sequential order so that the first line will execute before the second. This sequencing can be altered by using control flow statements which execute code, not neccessarily in sequence, based on described conditions (MDN Web Docs, 2024a). In Javascript, the ```if```, ```if else```, ```switch```, ```ternary operator``` and ```for loops``` are all techniques that can alter the order that a script is executed including skipping lines (MDN Web Docs, 2024b).
 
-The ```if``` statement evaluates whether a condition is true and, if so, executed a code bloke before continuing to execute the script sequentially. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are true. ```if``` and ```if else``` statements require the use of operands that return true or false based on whether the values compared are truthy or falsy. In Javascript, a function that returns false, undefined, null, 0, NaN or "", or a variable assigned one of these values, is considered falsy and will cause a particular if condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and values whilst loose equality will complete a type conversion to see if the values are the same when the data is the same type.
+The ```if``` statement evaluates whether a condition is true and, if so, executed a code bloke before continuing to execute the script sequentially. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are true. ```if``` and ```if else``` statements require the use of operands that return true or false based on whether the values compared are truthy or falsy. In Javascript, a function that returns ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```, or a variable assigned one of these values, is considered falsy and will cause a particular if condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and values whilst loose equality will complete a type conversion to see if the values are the same when the data is the same type.
 
 Below is an example of control flow and equality types:
 
@@ -157,7 +157,7 @@ else if (answer === true) {
     evaluation = "Truly true"
     return
 }
-else if (answer == true) {
+else if (answer) {
     evaluation = "Sort of true"
     return
 }
@@ -172,7 +172,7 @@ eval()
 
 ```
 
-```eval``` first initialises the variables ```evaluation``` and ```answer``` and then begins evaluations on the variables. The first if statement checks if ```evaluation``` is a truthy value which, because it is a blank string, is not true so it will not execute. The second if statement checks if answer is a boolean value equaling ```true```, however, it will not execute because answer is a string rather than a boolean so this evaluation is false. The third if statement converts answer to a boolean and evaluates to true because the values are loosely equal. ```evaluation``` is then set to "Sort of true" and the following else statement is ignored and the rest of the block statement executes so the console prints "Sort of true". The else statement would execute if none of the other if statements were true but, in this example is not neccessary and does not execute.
+```eval``` first initialises the variables ```evaluation``` and ```answer``` and then begins evaluations on the variables. The first if statement checks if ```evaluation``` is a truthy value which, because it is a blank string, is not true so it will not execute. The second if statement checks if answer is a boolean value equaling ```true```, however, it will not execute because answer is a string rather than a boolean so this evaluation is false. The third if statement converts answer to a boolean by checking if it is one of false, undefined, null, 0, NaN or "". Because it is not, nad answer holds a value, it evaluates to true. ```evaluation``` is then set to "Sort of true", the following else statement is skipped and the rest of the function executes so that the console prints "Sort of true". The else statement would execute if none of the other if statements were true but, in this example is not neccessary and does not execute.
 
 Other control conditional flow statements are the ```switch``` statement which describes the different possible conditions a variable could fulfill and executes the matching code block or a default code block. The ```ternary operator``` is an operator that checks for a condition and executes a "true" block or a "false" block depending on what the condition evaluates to.
 
@@ -204,6 +204,90 @@ MDN Web Docs (2023b) _[Loops and iteration](https://developer.mozilla.org/en-US/
 
 - quirks that are unique to JS
 - Provides a thorough explanation of control flow in programming
+
+Type coercion in Javascript is when a value is implicitly converted from one type to another automatically (MDN Web Docs, 2024a). This is different from conversions that are explicitly declared such as the String() or Number() methods.
+
+There are a variety of circumstances in which Javascript will automatically change a data type to complete process. The loose equality operator ```==``` will convert strings and booleans to numbers to compare their values against numbers (Samoshkin, 2018).
+
+For example:
+
+``` Javascript
+10 == "10"
+// Returns true, "10" is converted into 10 for the comparison
+'true' == true
+// Returns false, true is converted to 1 whilst 'true' is converted to NaN
+```
+
+Similarly, using ```+``` will implicitly convert a number to a string when a number value is added to a string.
+
+For example:
+
+``` Javascript
+10 + '10'
+// Returns '1010'
+```
+
+However, other number-based operators including ```<```, ```>=```, ```-```, ```*```, ```%``` and the bitwise operators, which consider binary values, coerce a string to a number.
+
+For example:
+
+```Javascript
+"10" - 5
+/// Returns 5
+"15" / 3
+/// Returns 5
+"5" ^ "3"
+/// converts "5" to 101, converts "3" to 11
+/// 101 XOR 011 = 110
+/// Returns 7  
+```
+
+Javascript will also cooerce values to booleans for evaluations such as ```if``` statements. Notably, logical operators use boolean coercion to calculate a result but return the original values (Samoshkin, 2018).
+
+For example:
+
+```Javascript
+Boolean("and")
+// Returns true
+"and" && 15
+// Returns 15
+"and" && false
+// Statement evaluates to falsy
+// Returns false
+"and" && NaN
+// NaN evaluates to falsy
+// Returns NaN
+
+```
+
+In the above example, ```"and"``` evaluates to true when it is explicitly converted because it is not one of the values ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```. The ```&&``` operator checks if the compared values are truthy by converting them implicitly to boolean. If both values are truthy, the last truthy value is returned. If one of the values is falsy, that value is returned, hence why ```false``` and ```NaN``` are returned in the last two comparisons (MDN Web Docs, 2024b).
+
+When non-primitive values such as objects are compared or evaluated, they are coerced to a primitive data type (Samoshkin, 2018). If added to compared using a logical operator or added using ```+```, the contents of an array will be converted to a string. Similarly, an object will be converted to a string as well. If a mathmetical operator is used, arrays and objects will be converted into numbers results in a NaN value.
+
+For example:
+
+```Javascript
+["hello"] + "hello"
+/// Returns "hellohello"
+["hello"] == "hello"
+/// Returns true
+["hello"] === "hello"
+/// Returns false
+{hello: "hello"} + "hello"
+/// Returns "[object Object]hello"
+{"hello"} - 1
+/// Returns NaN
+```
+
+Javascript type coercion is a useful feature which can reduce code by eliminating explicit conversion of variables. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
+
+### References
+
+Alexey Samoshkin (2018) _[JavaScript type coercion explained](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/)_, freeCodeCamp website, accessed 30 July 2024.
+
+MDN Web Docs (2024a) _[Type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)_, MDN Docs Glossary website, accessed 30 July 2024.
+
+MDN Web Docs (2024b) _[Logical AND (&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)_, MDN Docs Glossary website, accessed 30 July 2024.
 
 ## Q9. Explain data types, using examples from the JavaScript programming language /6
 
