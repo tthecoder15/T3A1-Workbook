@@ -233,13 +233,13 @@ For example:
 
 ```Javascript
 "10" - 5
-/// Returns 5
+// Returns 5
 "15" / 3
-/// Returns 5
+// Returns 5
 "5" ^ "3"
-/// converts "5" to 101, converts "3" to 11
-/// 101 XOR 011 = 110
-/// Returns 7  
+// converts "5" to 101, converts "3" to 11
+// 101 XOR 011 = 110
+// Returns 7  
 ```
 
 Javascript will also cooerce values to booleans for evaluations such as ```if``` statements. Notably, logical operators use boolean coercion to calculate a result but return the original values (Samoshkin, 2018).
@@ -268,15 +268,15 @@ For example:
 
 ```Javascript
 ["hello"] + "hello"
-/// Returns "hellohello"
+// Returns "hellohello"
 ["hello"] == "hello"
-/// Returns true
+// Returns true
 ["hello"] === "hello"
-/// Returns false
+// Returns false
 {hello: "hello"} + "hello"
-/// Returns "[object Object]hello"
+// Returns "[object Object]hello"
 {"hello"} - 1
-/// Returns NaN
+// Returns NaN
 ```
 
 Javascript type coercion is a useful feature which can reduce code by eliminating explicit conversion of variables. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
@@ -313,24 +313,24 @@ Primitive data types are immutable meaning that a primitive value cannot be alte
 let tree = "oak"
 tree[0] = "bark"
 console.log(tree)
-/// 'oak' 
-/// The string value is immutable
+// 'oak' 
+// The string value is immutable
 tree = "bark"
 console.log(tree)
-/// Console shows 'bark'
-/// Tree variable can be changed
+// Console shows 'bark'
+// Tree variable can be changed
 let forest = {trees: "oak"}
-/// Assigns forest an object value with a key-pair "trees: "oak""
+// Assigns forest an object value with a key-pair "trees: "oak""
 console.log(forest.trees)
-/// "oak"
+// "oak"
 forest.trees = "pine"
 console.log(forest.trees)
-/// Console shows "pine"
-/// Objects are mutable
+// Console shows "pine"
+// Objects are mutable
 forest.trees.concat(" and redgums") 
-/// Uses the string datatype's inbuilt concat() method
+// Uses the string datatype's inbuilt concat() method
 console.log(forest.trees)
-/// "oak and redgums"
+// "oak and redgums"
 ```
 
 There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified with a ```number``` datatype. These qualities should be noted when using the loose equality operator.
@@ -408,16 +408,16 @@ For example:
 ```Javascript
 let colours = ['blue', 'pink', 'red']
 console.log(colours)
-/// [ 'blue', 'pink', 'red' ]
+// [ 'blue', 'pink', 'red' ]
 colours.length
-/// 3
+// 3
 colours[2]
-/// 'red'
+// 'red'
 colours[6] = 'green'
 console.log(colours)
-/// [ 'blue', 'pink', 'red', <3 empty items>, 'green' ]
+// [ 'blue', 'pink', 'red', <3 empty items>, 'green' ]
 colours.length
-/// 7
+// 7
 ```
 
 Index targeting is a rudimentary way to alter an index and there are a variety of prototype methods that can be used to alter them. There are two types of methods to manipulate arrays: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating alternative counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative, two functions that remove values from arrays (MDN Web Docs, 2024). There are many methods that can manipulate and mutate an array and its values such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the indexes of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which returns a merged copy array of the given arguments with the x value as the first value, ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
@@ -426,17 +426,17 @@ For example:
 
 ```Javascript
 let colours = ["blue", "red", "green"]
-/// [ 'blue', 'red', 'green' ]
+// [ 'blue', 'red', 'green' ]
 colours.slice(0, -1)
-/// [ 'blue', 'red' ]
+// [ 'blue', 'red' ]
 colours
-/// [ 'blue', 'red', 'green' ]
-/// Colours is unaltered
+// [ 'blue', 'red', 'green' ]
+// Colours is unaltered
 colours.pop()
-/// 'green'
+// 'green'
 colours
-/// [ 'blue', 'red' ]
-/// pop() mutated Colours
+// [ 'blue', 'red' ]
+// pop() mutated Colours
 ```
 
 Arrays also have a collection of iterative methods which consider all values in an array and parses each value through a given callback function with different effects based on the specific method. Iterative methods are non-mutating and return copies of the relevant results. ```forEach()``` accepts a callback function and simply applies that function to all values in the array individually but does not return anything. ```filter()``` takes a callback function and returns a new array with only values that return a truthy value when passed to the provided function. ```map()``` applies a callback function to all values in an array and returns the results in a new array. ```sort()``` is an array method used to sort indexes of an array based on the criteria of a passed compare function. Notably, whilst ```sort()``` is similar to an iterative function, it mutates the array and sometimes invokes the callback function multiple times on a single index to sort the values meaning it is not a true iterative function.
@@ -446,25 +446,25 @@ For example:
 ``` Javascript
 colours = ["blue", "red", "green"]
 colours.forEach((val) => {console.log(val)})
-/// Console shows:
-/// blue
-/// red
-/// green
+// Console shows:
+// blue
+// red
+// green
 colours.filter((val) => val[0] == "b")
-/// [ 'blue' ]
+// [ 'blue' ]
 colours.map((val) => val + " and yellow")
-/// [ 'blue and yellow', 'red and yellow', 'green and yellow' ]
+// [ 'blue and yellow', 'red and yellow', 'green and yellow' ]
 console.log(colours)
-/// Console shows:
-/// [ 'blue', 'red', 'green' ]
-/// colours was unaltered
+// Console shows:
+// [ 'blue', 'red', 'green' ]
+// colours was unaltered
 colours.sort((a, b) => a.length - b.length)
-/// [ 'red', 'blue', 'green' ]
-/// Call back function sorts by shortest length first
+// [ 'red', 'blue', 'green' ]
+// Call back function sorts by shortest length first
 console.log(colours)
-/// Console shows:
-/// [ 'red', 'blue', 'green' ]
-/// colours array is mutated
+// Console shows:
+// [ 'red', 'blue', 'green' ]
+// colours array is mutated
 ```
 
 Arrays can be manipulated in various ways making them flexible tools for data storage. Array's iterative methods are particularly powerful for altering arrays according to sophisticated criteria. Essentially, arrays can be altered in mutative and non-mutative ways and there are always different techniques to achieve each type of alteration.
@@ -476,6 +476,124 @@ MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
 - Demonstrates an extensive ability to manipulate objects
+
+(MDN Web Docs, 2024a)
+
+Objects are used in Javascript to store properties and assign values to them for reference or manipulation. Properties and their associated values are key and value pairs and the key value's can be initialised with a name (a word without appostrophes), a string, a symbol or a number (MDN Web Docs, 2024). A property value can be a primitive data type or another object such as a function, an array or another nested object. A property that is a function is referred to as a method and this is how data types have associated functions that can be easily called. Each object property can be accessed using dot notation or bracket notation, except for properties with spaces which must be accessed using bracket notation. By referring to an object's property key, it can often be altered. If a property does not exist yet is assigned a value, a new property will be initialised with that value.
+
+For example:
+
+``` Javascript
+let identifier = "name"
+let dog = {
+    identifier: "Charles",
+    "personality type": "friendly"
+}
+console.log(dog)
+// Console shows:
+// { identifier: 'Charles', 'personality type': 'friendly' }
+dog.identifier
+// 'Charles'
+dog['personality type']
+// 'friendly
+dog.enemy = "cats"
+console.log(dog)
+// { identifier: 'Charles', 'personality type': 'friendly', enemy: 'cats' }
+```
+
+Objects can be created by listing properties within the object initializer syntax ```{}```, using ```Object.create()``` syntax or by using ```new ObjectName``` where ObjectName is a defined object constructor function. Defining an object constructor function allows a particular object structure to be reused as many times as required.
+
+For example:
+
+``` Javascript
+function Person(name, birthYear) {
+    this.name = name,
+    this.birthYear = birthYear,
+    this.planet = "Earth"
+    this.birthdaySong = function() {console.log("Happy birthday to me!")}
+}
+let student1 = new Person("Kyle", 2000)
+console.log(student1)
+// Console shows:
+// Person {
+//  name: 'Kyle',
+//  birthYear: 2000,
+//  planet: 'Earth',
+//  birthdaySong: [Function (anonymous)]
+// }
+student1.birthdaySong()
+// Console shows:
+// Happy birthday to me!
+```
+
+When an object constructor function contains a method like in the above example, the method is stored in each instance created using the constructor function. Alternatively, objects of the same type can share attributes including methods. Additional methods can be added this way by using the ```ObjectName.prototype``` syntax where ObjectName is a constructor name. The ```.constructor.name``` property of an object returns the name of the function used to construct it. To define a abstracted functions to interact with an object's properties or to make property keys obscured, objects can be initialised with ith getter and setter methods. These methods are attributes assigned using the ```get``` and ```set``` keywords followed by a function that returns or alters a different property. Getters and setters can be declared after an object and instances exist by using the ```.defineProperties()``` function which will add the functions to all instances similar to ```.prototype``` syntax.
+
+For example:
+
+``` Javascript
+function Person(name) {
+    this.name = name
+}
+let boy1 = new Person("Jeff")
+let boy2 = new Person("Stu")
+boy2.constructor.name
+// Returns 'Person'
+Person.prototype.grade = 2
+console.log(boy1.grade)
+// Console shows:
+// 2
+console.log(boy2.grade)
+// Console shows:
+// 2
+Object.defineProperties(boy2, {
+    getName: {
+        get() {
+            return this.name
+        }
+    },
+    setName: {
+        set(newName) {
+            this.name = newName
+        }
+    }
+})
+boy2.setName = "Charles"
+console.log(boy2.getName)
+// Console shows:
+// 'Charles'
+console.log(boy2.name)
+// Console shows:
+// 'Charles'
+```
+
+Object properties can be iterated through for manipulation as well. The inbuilt ```Object.keys()``` returns all property key values that are enumerables which excludes values such as getter and setter functions as well as prototype properties. ```Object.getOwnPropertyNames()``` returns all key names including non-enumerable keys excluding protype properties again. Otherwise, a ```for in``` loop can be used to iterate through an object and returns all emumerable properties including prototype properties. Each property can than be used or manipulated in the code block.
+
+For example:
+
+``` Javascript
+// Using boy1 and boy2 as defined in the previous example block
+Object.keys(boy2)
+// Returns [ 'name' ]
+Object.getOwnPropertyNames(boy2)
+// Returns [ 'name', 'getName', 'setName' ]
+for (property in boy2) {console.log(property)}
+// Console shows:
+// name
+// grade
+for (property in boy2) {
+    boy2[property] = "Freshman"
+}
+for (property in boy2) {console.log(boy2[property])}
+// Console shows:
+// Freshman
+// Freshman
+```
+
+There are multiple, powerful ways to manipulate objects in Javascript targeting individual instances or all instances constructed using the same function. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
+
+### References
+
+MDN Web Docs (2024) _[Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)_, MDN Web Docs website, accessed 30 July 2024.
 
 ## Q12. Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
