@@ -294,29 +294,7 @@ MDN Web Docs (2024b) _[Logical AND (&&)](https://developer.mozilla.org/en-US/doc
 - types, unique to JS, show what the concept is and how to use it
 - Provides a thorough explanation of data types in programming
 
-(GeeksforGeeks, 2024)
-
-- primitive data types - number, bigInt, string, boolean, null, underfined, symbol
-- non-primitive types - object, array, function
-- null can only be null, underfined is a variable not assigned a value
-- bigint is an object used to represent whole numbers larger than 253-1
-- number are integer and floating-point
-- special numbers 'infinity', '-infinity', NaN
-- strings allow for string interpolation ` ${} `
-- boolean true or false
-- null represents nothing or value inknown
-- null is an object
-- Symbol are new as of ES6, return unique identifiers can be used to add unique property keys that won't collide with other keys, used for data encapsulation or hiding
-
-(MDN Web Docs, 2024b )
-
-- bigInt used for values greater than 2^53
-- bigint declarded by adding n to the end of a string
-- big int can allow a user to add past the maximum values on JS
-- stops rounding and allows values to be added on past the limits without rounding
-- can be loosely compared against number type but not strictly
-
-In Javascript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be assigned as one of these data types or as an object. The primitive data types have a variety of methods and behaviours fundamentally to them that impact how they can be used within Javascript syntax. Javascript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). A variable's datatype can be checked using the built-in ```typeof()``` function.
+In Javascript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be values that are one of these data types or an object such as a function. Javascript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). The primitive data types have a variety of methods and behaviours inherently linked to them that assist in their usage within Javascript syntax. A variable's datatype can be checked using the built-in ```typeof()``` function.
 
 For example:
 
@@ -329,7 +307,33 @@ typeof(example)
 // Returns 'number'
 ```
 
-There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified as a number. These qualities should be noted when using the loose equality operator.
+Primitive data types are immutable meaning that a primitive value cannot be altered. For example, the ```number``` ```4``` cannot be altered within Javascript to equal ```5```. However the other type of data, objects, are mutable and can store primitive data to be changed later. Objects can be considered as a collection of primitive value properties. In addition, primitive data types have methods associated with them that can assist in modifying objects or variables that contain them.
+
+```Javascript
+let tree = "oak"
+tree[0] = "bark"
+console.log(tree)
+/// 'oak' 
+/// The string value is immutable
+tree = "bark"
+console.log(tree)
+/// Console shows 'bark'
+/// Tree variable can be changed
+let forest = {trees: "oak"}
+/// Assigns forest an object value with a key-pair "trees: "oak""
+console.log(forest.trees)
+/// "oak"
+forest.trees = "pine"
+console.log(forest.trees)
+/// Console shows "pine"
+/// Objects are mutable
+forest.trees.concat(" and redgums") 
+/// Uses the string datatype's inbuilt concat() method
+console.log(forest.trees)
+/// "oak and redgums"
+```
+
+There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified with a ```number``` datatype. These qualities should be noted when using the loose equality operator.
 
 For example:
 
@@ -345,31 +349,41 @@ typeof(example3)
 // Returns 'number'
 ```
 
-Primitive data types are immutable meaning that a primitive value cannot be altered. However, objects are mutable and can store primitive data that can be changed later. Objects can be considered as a collection of properties for this reason. In addition, primitive data types have methods associated with them that can assist in objects or variable that contain them.
+```bigint``` is a primitive data type used for handling numbers larger or smaller than the minimum number values of Javascript. Typically, if a value is added to the maximum ```number``` value, Javascript will round unpredictably. ```bigint``` does not have this problem, however, and will add accurately. ```bigint``` values can be generated dynamically by adding ```n``` after a number when a variable is being assigned (MDN Web Docs, 2024b). ```symbol``` is a data type used to create constants that are definitively unique. Symbols can be passed as a key value to an object ensuring the symbol value will not clash with a property assigned later and, when generating the symbol, a symbol can hold additional data. Symbols are also not enumerable meaning that they will not be considered when an object is iterated. This quality can be used to keep particular data more private, although the data is can still be accessed in other ways (Playcode.io, n.d.). The ```bigint``` and ```symbol`` datatypes allow for unique functionality.
 
-```Javascript
-let tree = "oak"
-tree[0] = "bark"
-console.log(tree)
-/// Console shows 'oak' because a string is immutable
-tree = "bark"
-console.log(tree)
-/// Console shows 'bark'
-/// Tree variable can be reassigned
-let forest = {trees: "oak"}
-/// Assigns forest an object value with a key pair tree: "oak"
-console.log(forest.trees)
-/// Console shows "oak"
-forest.trees = "pine"
-console.log(forest.trees)
-/// Console shows "pine"
-forest.trees.concat(" and redgums") 
-/// Uses string's inbuilt concat() method
-console.log(forest.trees)
-/// Console shows "oak and redgums"
+For example:
+
+``` Javascript
+let maxNumber = Number.MAX_SAFE_INTEGER
+// 9007199254740991
+maxNumber + 2
+// 9007199254740992
+// Value is incorrectly added
+let bigIntMax = BigInt(Number.MAX_SAFE_INTEGER)
+// 9007199254740991n
+bigIntMax + 2n
+// 9007199254740993n
+// Must add using bigint notation
+// Successfully tracks update
+const house = Symbol("bricks")
+let constructionPlans = {[house]: "pink"}
+// Symbol can be passed as an object key
+constructionPlans.house = "blue"
+// Does not overwrite symbol house
+console.log(constructionPlans)
+// { house: 'blue', [Symbol(bricks)]: 'pink' }
+console.log(Object.keys(constructionPlans))
+// ['house']
+// This is the string value, symbol attribute is not shown
+console.log(constructionPlans[house])
+// pink
+console.log(house)
+// Symbol(bricks)
+// Symbol can be accessed out of the context of the object it is in
+
 ```
 
-The various primitive types of Javascript are used to handle distinct values with unique properties. For this reason, they all have specific methods associated with them used to extend their functionality. Each primitive type has associated behaviour with the Javascript language as well and these data types, and their properties, can be used in objects to create advanced funcitonality.
+The various primitive data types of Javascript are used to handle different types of values with unique properties. For this reason, they all have specific methods associated with them to extend their functionality. Each primitive type has associated behaviour within the Javascript language and their properties and methods can be leveraged in objects to create advanced funcitonality.
 
 ### References
 
@@ -379,11 +393,14 @@ MDN Web Docs (2024a) _[JavaScript data types and data structures](https://develo
 
 MDN Web Docs (2024b) _[BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)_, MDN Web Docs website, accessed 30 July 2024.
 
+Playcode.io (n.d.) _[JavaScript Symbols](https://playcode.io/javascript/symbols)_, Playcode Website website, accessed 31 July 2024.
+
 ## Q10. Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
 - explain a concept, how to use it
 - Demonstrates an extensive ability to manipulate arrays
 - .filter, .map, .sort
+
 
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
