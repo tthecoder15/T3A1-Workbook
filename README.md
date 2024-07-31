@@ -401,6 +401,77 @@ Playcode.io (n.d.) _[JavaScript Symbols](https://playcode.io/javascript/symbols)
 - Demonstrates an extensive ability to manipulate arrays
 - .filter, .map, .sort
 
+Arrays are mutable objects used to store a collection of items in a single variable. Arrays are resizeable and can contain a mix of datatypes including objects. Arrays have an inherent length property which is related to the number of values with in the array. Values within an array are zero-indexed with a numbered key which can be used to target them. Notably, arrays can be explicitly altered to have their length extended and a value can be assigned to a non-sequential index. When this occurs, the indexes between the two values that are assigned values hold an ```undefined``` value.
+
+For example:
+
+```Javascript
+let colours = ['blue', 'pink', 'red']
+console.log(colours)
+/// [ 'blue', 'pink', 'red' ]
+colours.length
+/// 3
+colours[2]
+/// 'red'
+colours[6] = 'green'
+console.log(colours)
+/// [ 'blue', 'pink', 'red', <3 empty items>, 'green' ]
+colours.length
+/// 7
+```
+
+Index targeting is a rudimentary way to alter an index and there are a variety of prototype methods that can be used to alter them. There are two types of methods to manipulate arrays: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating alternative counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative, two functions that remove values from arrays (MDN Web Docs, 2024). There are many methods that can manipulate and mutate an array and its values such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the indexes of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which returns a merged copy array of the given arguments with the x value as the first value, ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
+
+For example:
+
+```Javascript
+let colours = ["blue", "red", "green"]
+/// [ 'blue', 'red', 'green' ]
+colours.slice(0, -1)
+/// [ 'blue', 'red' ]
+colours
+/// [ 'blue', 'red', 'green' ]
+/// Colours is unaltered
+colours.pop()
+/// 'green'
+colours
+/// [ 'blue', 'red' ]
+/// pop() mutated Colours
+```
+
+Arrays also have a collection of iterative methods which consider all values in an array and parses each value through a given callback function with different effects based on the specific method. Iterative methods are non-mutating and return copies of the relevant results. ```forEach()``` accepts a callback function and simply applies that function to all values in the array individually but does not return anything. ```filter()``` takes a callback function and returns a new array with only values that return a truthy value when passed to the provided function. ```map()``` applies a callback function to all values in an array and returns the results in a new array. ```sort()``` is an array method used to sort indexes of an array based on the criteria of a passed compare function. Notably, whilst ```sort()``` is similar to an iterative function, it mutates the array and sometimes invokes the callback function multiple times on a single index to sort the values meaning it is not a true iterative function.
+
+For example:
+
+``` Javascript
+colours = ["blue", "red", "green"]
+colours.forEach((val) => {console.log(val)})
+/// Console shows:
+/// blue
+/// red
+/// green
+colours.filter((val) => val[0] == "b")
+/// [ 'blue' ]
+colours.map((val) => val + " and yellow")
+/// [ 'blue and yellow', 'red and yellow', 'green and yellow' ]
+console.log(colours)
+/// Console shows:
+/// [ 'blue', 'red', 'green' ]
+/// colours was unaltered
+colours.sort((a, b) => a.length - b.length)
+/// [ 'red', 'blue', 'green' ]
+/// Call back function sorts by shortest length first
+console.log(colours)
+/// Console shows:
+/// [ 'red', 'blue', 'green' ]
+/// colours array is mutated
+```
+
+Arrays can be manipulated in various ways making them flexible tools for data storage. Array's iterative methods are particularly powerful for altering arrays according to sophisticated criteria. Essentially, arrays can be altered in mutative and non-mutative ways and there are always different techniques to achieve each type of alteration.
+
+### References
+
+MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)_, MDN Web Docs website, accessed 30 July 2024.
 
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
