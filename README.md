@@ -61,17 +61,17 @@ Boehm, B. W., Brown, J. R. and Lipow, M., (1976). ‘Quantitative Evaluation of 
 - REACT, express data, Mongo, Node, how the techs work together to make the app
 - Shows almost flawless understanding of the high level structure of the app
 
-The MERN stack is a popular collection of technologies which can be used to create a dynamic web application. MERN stands for MongoDB, Express, React JS and Node.js, four tools which all use Javascript syntax and complimentarily fill the roles required to generate webpages, handle interactions with them and serve and store their data.
+The MERN stack is a popular collection of technologies which can be used to create a dynamic web application. MERN stands for MongoDB, Express, React JS and Node.js, four tools which all use JavaScript syntax and complimentarily fill the roles required to generate webpages, handle interactions with them and serve and store their data.
 
-React JS is the front-end component of the MERN stack and is a web framework used to create fast-loading, responsive webpages. React uses JSX, a Javascript syntax extension which hybridises JS with HTML so that users can easily describe stateful webpages. React uses component-based design where the different elements of a website are modularised to be reused like building blocks and pieced together to create a webpage. React is powerful thanks to its underlying virtual DOM technologies. The virtual DOM is a recreation of the DOM (Document Object Model) which describes the elements of a webpage as a JS object. React creates an exact replica of the DOM as it is rendered as well as a new copy whenever the webpage is to be changed. The two iterations are compared to identify where the changes take place so that the true DOM can be updated compartmentally to reflect the changes (GeeksforGeeks, 2024). This is different to the true DOM which requires an entire reload when the page changes and this allows React display pages more efficiently.
+React JS is the front-end component of the MERN stack and is a web framework used to create fast-loading, responsive webpages. React uses JSX, a JavaScript syntax extension which hybridises JS with HTML so that users can easily describe stateful webpages. React uses component-based design where the different elements of a website are modularised to be reused like building blocks and pieced together to create a webpage. React is powerful thanks to its underlying virtual DOM technologies. The virtual DOM is a recreation of the DOM (Document Object Model) which describes the elements of a webpage as a JS object. React creates an exact replica of the DOM as it is rendered as well as a new copy whenever the webpage is to be changed. The two iterations are compared to identify where the changes take place so that the true DOM can be updated compartmentally to reflect the changes (GeeksforGeeks, 2024). This is different to the true DOM which requires an entire reload when the page changes and this allows React display pages more efficiently.
 
 Express is a Node package used to create APIs and handle routing configuration, facilitating the connection and interaction between a web application's front-end and back-end. Using Express, a developer is able to define routers which describe how a webpage will handle and respond to the different HTTP request types at defined URIs. Express allows for the use of middleware to handle requests and manipulate any data they are sent with or lack. A typical middleware used in Express is a converts a request's body into JSON, so that it can be sanitised and forwarded to a database or verified for correctness. Express is particularly effective for developer's because its syntax and router objects allow for DRY, reuseable code elements which speeds up development (GeeksforGeeks, 2023).
 
-Node.js is a runtime environment which allows the Express scripting of a web application to run. Express is built using Javascript which was designed to be executed by web browsers. Node provides an alternative way to run JS scripts so that the webpage and server-side logic can be executed concurrently and written in the same language. In addition, Node.js is open-sourced and has a large developmental community that generates packages to extend server-side capabilities.
+Node.js is a runtime environment which allows the Express scripting of a web application to run. Express is built using JavaScript which was designed to be executed by web browsers. Node provides an alternative way to run JS scripts so that the webpage and server-side logic can be executed concurrently and written in the same language. In addition, Node.js is open-sourced and has a large developmental community that generates packages to extend server-side capabilities.
 
-Finally, MongoDB is the database layer of the MERN stack. MongoDB is a NoSQL database that can be interacted with using Javascript syntax. MongoDB databases can be run locally or using MongoDB Inc.'s cloud services. MongoDB is particularly valued due to its flexible data structures which allow developers to define, store and query instances without the strict formatting required by SQL databases (GeeksforGeeks, 2023). In the MERN stack, MongoDB is used to store the data that populates a page and to record users' posted data.
+Finally, MongoDB is the database layer of the MERN stack. MongoDB is a NoSQL database that can be interacted with using JavaScript syntax. MongoDB databases can be run locally or using MongoDB Inc.'s cloud services. MongoDB is particularly valued due to its flexible data structures which allow developers to define, store and query instances without the strict formatting required by SQL databases (GeeksforGeeks, 2023). In the MERN stack, MongoDB is used to store the data that populates a page and to record users' posted data.
 
-In combination, the React layer provides the tools to create webpages for users to interact with, the Express layer handles the user's interactions by requesting the appropriate resources, Node.js allows Express to execute and offers additional capabilities and MongoDB stores data for the user to interact with. Besides effective performance, the key element that makes the MERN stack popular is its consistent use of Javascript eliminating script conversions and allowing developers to easily learn the software syntax (MongoDB, n.d. & Kadam et. al., 2023).
+In combination, the React layer provides the tools to create webpages for users to interact with, the Express layer handles the user's interactions by requesting the appropriate resources, Node.js allows Express to execute and offers additional capabilities and MongoDB stores data for the user to interact with. Besides effective performance, the key element that makes the MERN stack popular is its consistent use of JavaScript eliminating script conversions and allowing developers to easily learn the software syntax (MongoDB, n.d. & Kadam et. al., 2023).
 
 ### References
 
@@ -90,7 +90,7 @@ MongoDB (n.d.) _[Mern Stack Explained](https://www.mongodb.com/resources/languag
 
 To design and create a website for a business, a development team needs a specific understanding of the business' requirements. Considering Boehm's (1976) model for quality software, a website should be designed considering the contexts that it will be engaged with. Firstly, the development team must understand what functionality the website needs to have to aid the business. By extension, the team needs to understand the typical website user so that the website can be designed to suit their hardware and interface requirements. For example, a general practice business will likely need to feature contact information, service offerings and information about the clinic's doctors. In addition, the business may require additional functionality such as an online booking system implemented with dynamic webpages and form submissions, or, the company may want to keep these systems on site for simplicity. By extension, depending on the clinic's customers or location, the typical user may have limited website literacy and may require a simpler user interface, or the business may want a sophisticated and sleek interface to attract a different customer type. These requirements should be considered to ensure the website fulfills Boehm's recommendations for usability and portability across devices. The team also needs to understand the company's maintenance plans following the websites creation to ensure that it is appropriately future-proofed. If the business does not plan on updating the site frequently, the team needs to ensure the layout and functionality is robust as web technologies advance, a consideration that would shape the entire design process. It is key that a team understands the contexts that their website will be used in to successfully design and implement it.
 
-There are distinct technical skills a development team requires to create a website using a particular technology stack. In many contexts, the MERN stack provides all of the tools required to make an approptiate small business' website. To use the MERN stack, the design team must know how to use Javascript as well as the specific syntax of MongoDB, Express, React JS and how to configure and use Node.js. Besides these defined skills, there are complementary understandings the team must apply to use these tools. When designing the back-end and routing for the website, the team members must implement RESTful practices so that the website functions in a stable and maintainable way. This includes defining routes that are logical and delivering data in a consistent way. Notably, creating a RESTful API requires a reliable database and consistant storage structure. Because MongoDB is a NoSQL database, the development team has full control over how instances are recorded which allows for quick initialisation but can also permit messy formatting. For these reasons, the development team must have a technical knowledge of the MERN stack but also a conceptual knowledge of how to design the website's database and backend to be consistent and maintainable.
+There are distinct technical skills a development team requires to create a website using a particular technology stack. In many contexts, the MERN stack provides all of the tools required to make an approptiate small business' website. To use the MERN stack, the design team must know how to use JavaScript as well as the specific syntax of MongoDB, Express, React JS and how to configure and use Node.js. Besides these defined skills, there are complementary understandings the team must apply to use these tools. When designing the back-end and routing for the website, the team members must implement RESTful practices so that the website functions in a stable and maintainable way. This includes defining routes that are logical and delivering data in a consistent way. Notably, creating a RESTful API requires a reliable database and consistant storage structure. Because MongoDB is a NoSQL database, the development team has full control over how instances are recorded which allows for quick initialisation but can also permit messy formatting. For these reasons, the development team must have a technical knowledge of the MERN stack but also a conceptual knowledge of how to design the website's database and backend to be consistent and maintainable.
 
 In addition to project understanding and technical knowledge, the team members require project management and planning skills. In many contemporary projects, Agile methodologies are used to set goals, manage deadlines and respond to project challenges as they arise. Adopting Agile techniques including using Kanban boards to visually communicate progress and prioritise tasks, scheduling daily stand-ups and feedback sessions and dedicating resources based on team agreement are all beneficial practices that will bolster a teams productivity (Moe, et. all, 2014). Whilst a development team does not need to know Agile project management specifically, the team requires a structured division of work to ensure all tasks can be completed on schedule. In a technical context, project management requires a team to develop and enforce source control habits. Using Git or an alternative software, team members must know how to back-up and share their work and how to archive their progress with succinct commit messages and pull requests.
 
@@ -140,13 +140,13 @@ Fernandez, D. J. and Fernandez, J. D. (2008) ‘Agile Project Management —Agil
 - if statements
 - Provides a thorough explanation of control flow in programming
 
-When Javascript code is executed, it is typically interpreted line-by-line in sequential order so that the first line will execute before the second. This sequencing can be altered by using control flow statements which execute code, not neccessarily in sequence, based on described conditions (MDN Web Docs, 2024a). In Javascript, the ```if```, ```if else```, ```switch```, ```ternary operator``` and ```for loops``` are all techniques that can alter the order that a script is executed including skipping lines (MDN Web Docs, 2024b).
+When JavaScript code is executed, it is typically interpreted line-by-line in sequential order so that the first line will execute before the second. This sequencing can be altered by using control flow statements which execute code, not neccessarily in sequence, based on described conditions (MDN Web Docs, 2024a). In JavaScript, the ```if```, ```if else```, ```switch```, ```ternary operator``` and ```for loops``` are all techniques that can alter the order that a script is executed including skipping lines (MDN Web Docs, 2024b).
 
-The ```if``` statement evaluates whether a condition is true and, if so, executed a code bloke before continuing to execute the script sequentially. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are true. ```if``` and ```if else``` statements require the use of operands that return true or false based on whether the values compared are truthy or falsy. In Javascript, a function that returns ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```, or a variable assigned one of these values, is considered falsy and will cause a particular if condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and values whilst loose equality will complete a type conversion to see if the values are the same when the data is the same type.
+The ```if``` statement evaluates whether a condition is true and, if so, executed a code bloke before continuing to execute the script sequentially. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are true. ```if``` and ```if else``` statements require the use of operands that return true or false based on whether the values compared are truthy or falsy. In JavaScript, a function that returns ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```, or a variable assigned one of these values, is considered falsy and will cause a particular if condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and values whilst loose equality will complete a type conversion to see if the values are the same when the data is the same type.
 
 Below is an example of control flow and equality types:
 
-``` Javascript
+``` JavaScript
 function eval () {
 var evaluation = ""
 var answer = "true"
@@ -176,11 +176,11 @@ eval()
 
 Other control conditional flow statements are the ```switch``` statement which describes the different possible conditions a variable could fulfill and executes the matching code block or a default code block. The ```ternary operator``` is an operator that checks for a condition and executes a "true" block or a "false" block depending on what the condition evaluates to.
 
-Loops are an alternative to conditional statement control flow and can be used to execute code that deviates from line-by-line execution. Javascript has various ```for``` loops as well as ```while``` loops. ```for``` loops repeat a block of code until it evaluates to false such as iterating through an array until there are no more values that have not been iterated. ```while``` statements loop a block of code until a condition evaluates to false. Alternatively, ```do...while``` loops execute a block of code before evaluating a condition, stopping when the condition evaluates falsely (MDN Web Docs, 2023b).
+Loops are an alternative to conditional statement control flow and can be used to execute code that deviates from line-by-line execution. JavaScript has various ```for``` loops as well as ```while``` loops. ```for``` loops repeat a block of code until it evaluates to false such as iterating through an array until there are no more values that have not been iterated. ```while``` statements loop a block of code until a condition evaluates to false. Alternatively, ```do...while``` loops execute a block of code before evaluating a condition, stopping when the condition evaluates falsely (MDN Web Docs, 2023b).
 
 For example:
 
-``` Javascript
+``` JavaScript
 let counter = 0;
 do {
     counter += 2;
@@ -205,13 +205,13 @@ MDN Web Docs (2023b) _[Loops and iteration](https://developer.mozilla.org/en-US/
 - quirks that are unique to JS
 - Provides a thorough explanation of control flow in programming
 
-Type coercion in Javascript is when a value is implicitly converted from one type to another automatically (MDN Web Docs, 2024a). This is different from conversions that are explicitly declared such as the String() or Number() methods.
+Type coercion in JavaScript is when a value is implicitly converted from one type to another automatically (MDN Web Docs, 2024a). This is different from conversions that are explicitly declared such as the String() or Number() methods.
 
-There are a variety of circumstances in which Javascript will automatically change a data type to complete process. The loose equality operator ```==``` will convert strings and booleans to numbers to compare their values against numbers (Samoshkin, 2018).
+There are a variety of circumstances in which JavaScript will automatically change a data type to complete process. The loose equality operator ```==``` will convert strings and booleans to numbers to compare their values against numbers (Samoshkin, 2018).
 
 For example:
 
-``` Javascript
+``` JavaScript
 10 == "10"
 // Returns true, "10" is converted into 10 for the comparison
 'true' == true
@@ -222,7 +222,7 @@ Similarly, using ```+``` will implicitly convert a number to a string when a num
 
 For example:
 
-``` Javascript
+``` JavaScript
 10 + '10'
 // Returns '1010'
 ```
@@ -231,7 +231,7 @@ However, other number-based operators including ```<```, ```>=```, ```-```, ```*
 
 For example:
 
-```Javascript
+```JavaScript
 "10" - 5
 // Returns 5
 "15" / 3
@@ -242,11 +242,11 @@ For example:
 // Returns 7  
 ```
 
-Javascript will also cooerce values to booleans for evaluations such as ```if``` statements. Notably, logical operators use boolean coercion to calculate a result but return the original values (Samoshkin, 2018).
+JavaScript will also cooerce values to booleans for evaluations such as ```if``` statements. Notably, logical operators use boolean coercion to calculate a result but return the original values (Samoshkin, 2018).
 
 For example:
 
-```Javascript
+```JavaScript
 Boolean("and")
 // Returns true
 "and" && 15
@@ -266,7 +266,7 @@ When non-primitive values such as objects are compared or evaluated, they are co
 
 For example:
 
-```Javascript
+```JavaScript
 ["hello"] + "hello"
 // Returns "hellohello"
 ["hello"] == "hello"
@@ -279,7 +279,7 @@ For example:
 // Returns NaN
 ```
 
-Javascript type coercion is a useful feature which can reduce code by eliminating explicit conversion of variables. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
+JavaScript type coercion is a useful feature which can reduce code by eliminating explicit conversion of variables. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
 
 ### References
 
@@ -294,11 +294,11 @@ MDN Web Docs (2024b) _[Logical AND (&&)](https://developer.mozilla.org/en-US/doc
 - types, unique to JS, show what the concept is and how to use it
 - Provides a thorough explanation of data types in programming
 
-In Javascript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be values that are one of these data types or an object such as a function. Javascript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). The primitive data types have a variety of methods and behaviours inherently linked to them that assist in their usage within Javascript syntax. A variable's datatype can be checked using the built-in ```typeof()``` function.
+In JavaScript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be values that are one of these data types or an object such as a function. JavaScript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). The primitive data types have a variety of methods and behaviours inherently linked to them that assist in their usage within JavaScript syntax. A variable's datatype can be checked using the built-in ```typeof()``` function.
 
 For example:
 
-```Javascript
+```JavaScript
 let example = "cat"
 typeof(example)
 // Returns 'string' 
@@ -307,9 +307,9 @@ typeof(example)
 // Returns 'number'
 ```
 
-Primitive data types are immutable meaning that a primitive value cannot be altered. For example, the ```number``` ```4``` cannot be altered within Javascript to equal ```5```. However the other type of data, objects, are mutable and can store primitive data to be changed later. Objects can be considered as a collection of primitive value properties. In addition, primitive data types have methods associated with them that can assist in modifying objects or variables that contain them.
+Primitive data types are immutable meaning that a primitive value cannot be altered. For example, the ```number``` ```4``` cannot be altered within JavaScript to equal ```5```. However the other type of data, objects, are mutable and can store primitive data to be changed later. Objects can be considered as a collection of primitive value properties. In addition, primitive data types have methods associated with them that can assist in modifying objects or variables that contain them.
 
-```Javascript
+```JavaScript
 let tree = "oak"
 tree[0] = "bark"
 console.log(tree)
@@ -337,7 +337,7 @@ There are particular quirks to some of the data types and their associated value
 
 For example:
 
-```Javascript
+```JavaScript
 let example1 = null
 typeof(example1)
 // Returns 'object'
@@ -349,11 +349,11 @@ typeof(example3)
 // Returns 'number'
 ```
 
-```bigint``` is a primitive data type used for handling numbers larger or smaller than the minimum number values of Javascript. Typically, if a value is added to the maximum ```number``` value, Javascript will round unpredictably. ```bigint``` does not have this problem, however, and will add accurately. ```bigint``` values can be generated dynamically by adding ```n``` after a number when a variable is being assigned (MDN Web Docs, 2024b). ```symbol``` is a data type used to create constants that are definitively unique. Symbols can be passed as a key value to an object ensuring the symbol value will not clash with a property assigned later and, when generating the symbol, a symbol can hold additional data. Symbols are also not enumerable meaning that they will not be considered when an object is iterated. This quality can be used to keep particular data more private, although the data is can still be accessed in other ways (Playcode.io, n.d.). The ```bigint``` and ```symbol`` datatypes allow for unique functionality.
+```bigint``` is a primitive data type used for handling numbers larger or smaller than the minimum number values of JavaScript. Typically, if a value is added to the maximum ```number``` value, JavaScript will round unpredictably. ```bigint``` does not have this problem, however, and will add accurately. ```bigint``` values can be generated dynamically by adding ```n``` after a number when a variable is being assigned (MDN Web Docs, 2024b). ```symbol``` is a data type used to create constants that are definitively unique. Symbols can be passed as a key value to an object ensuring the symbol value will not clash with a property assigned later and, when generating the symbol, a symbol can hold additional data. Symbols are also not enumerable meaning that they will not be considered when an object is iterated. This quality can be used to keep particular data more private, although the data is can still be accessed in other ways (Playcode.io, n.d.). The ```bigint``` and ```symbol`` datatypes allow for unique functionality.
 
 For example:
 
-``` Javascript
+``` JavaScript
 let maxNumber = Number.MAX_SAFE_INTEGER
 // 9007199254740991
 maxNumber + 2
@@ -383,7 +383,7 @@ console.log(house)
 
 ```
 
-The various primitive data types of Javascript are used to handle different types of values with unique properties. For this reason, they all have specific methods associated with them to extend their functionality. Each primitive type has associated behaviour within the Javascript language and their properties and methods can be leveraged in objects to create advanced funcitonality.
+The various primitive data types of JavaScript are used to handle different types of values with unique properties. For this reason, they all have specific methods associated with them to extend their functionality. Each primitive type has associated behaviour within the JavaScript language and their properties and methods can be leveraged in objects to create advanced funcitonality.
 
 ### References
 
@@ -405,7 +405,7 @@ Arrays are mutable objects used to store a collection of items in a single varia
 
 For example:
 
-```Javascript
+```JavaScript
 let colours = ['blue', 'pink', 'red']
 console.log(colours)
 // [ 'blue', 'pink', 'red' ]
@@ -424,7 +424,7 @@ Index targeting is a rudimentary way to alter an index and there are a variety o
 
 For example:
 
-```Javascript
+```JavaScript
 let colours = ["blue", "red", "green"]
 // [ 'blue', 'red', 'green' ]
 colours.slice(0, -1)
@@ -443,7 +443,7 @@ Arrays also have a collection of iterative methods which consider all values in 
 
 For example:
 
-``` Javascript
+``` JavaScript
 colours = ["blue", "red", "green"]
 colours.forEach((val) => {console.log(val)})
 // Console shows:
@@ -471,7 +471,7 @@ Arrays can be manipulated in various ways making them flexible tools for data st
 
 ### References
 
-MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)_, MDN Web Docs website, accessed 30 July 2024.
+MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)_, MDN Web Docs website, accessed 31 July 2024.
 
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
@@ -479,11 +479,11 @@ MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 
 (MDN Web Docs, 2024a)
 
-Objects are used in Javascript to store properties and assign values to them for reference or manipulation. Properties and their associated values are key and value pairs and the key value's can be initialised with a name (a word without appostrophes), a string, a symbol or a number (MDN Web Docs, 2024). A property value can be a primitive data type or another object such as a function, an array or another nested object. A property that is a function is referred to as a method and this is how data types have associated functions that can be easily called. Each object property can be accessed using dot notation or bracket notation, except for properties with spaces which must be accessed using bracket notation. By referring to an object's property key, it can often be altered. If a property does not exist yet is assigned a value, a new property will be initialised with that value.
+Objects are used in JavaScript to store properties and assign values to them for reference or manipulation. Properties and their associated values are key and value pairs and the key value's can be initialised with a name (a word without appostrophes), a string, a symbol or a number (MDN Web Docs, 2024). A property value can be a primitive data type or another object such as a function, an array or another nested object. A property that is a function is referred to as a method and this is how data types have associated functions that can be easily called. Each object property can be accessed using dot notation or bracket notation, except for properties with spaces which must be accessed using bracket notation. By referring to an object's property key, it can often be altered. If a property does not exist yet is assigned a value, a new property will be initialised with that value.
 
 For example:
 
-``` Javascript
+``` JavaScript
 let identifier = "name"
 let dog = {
     identifier: "Charles",
@@ -505,7 +505,7 @@ Objects can be created by listing properties within the object initializer synta
 
 For example:
 
-``` Javascript
+``` JavaScript
 function Person(name, birthYear) {
     this.name = name,
     this.birthYear = birthYear,
@@ -530,7 +530,7 @@ When an object constructor function contains a method like in the above example,
 
 For example:
 
-``` Javascript
+``` JavaScript
 function Person(name) {
     this.name = name
 }
@@ -570,7 +570,7 @@ Object properties can be iterated through for manipulation as well. The inbuilt 
 
 For example:
 
-``` Javascript
+``` JavaScript
 // Using boy1 and boy2 as defined in the previous example block
 Object.keys(boy2)
 // Returns [ 'name' ]
@@ -589,23 +589,109 @@ for (property in boy2) {console.log(boy2[property])}
 // Freshman
 ```
 
-There are multiple, powerful ways to manipulate objects in Javascript targeting individual instances or all instances constructed using the same function. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
+There are multiple, powerful ways to manipulate objects in JavaScript targeting individual instances or all instances constructed using the same function. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
 
 ### References
 
-MDN Web Docs (2024) _[Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)_, MDN Web Docs website, accessed 30 July 2024.
+MDN Web Docs (2024) _[Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)_, MDN Web Docs website, accessed 31 July 2024.
 
 ## Q12. Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
 - Demonstrates an extensive ability to manipulate JSON
 
-Amazon Web Services (2024) _[What is SQL?](https://aws.amazon.com/what-is/sql/)_, AWS website, accessed 24 May 2024.
+JSON (JavaScript Object Notation) is a text-based format designed for transporting data as a string that can be, later, interpreted as an object. Formatting data as a string means it can be handled by more applications, including different applications using different native language, making JSON files convenient for sharing (MDN Web Docs, 2024b).
 
-Hanlon, M., Dooley, R., Mock, S., Dahan, M., Nuthulapati, P. & Hurley, P. (2011). _Benefits of NoSQL databases for portals & science gateways_. DOI: [10.1145/2016741.2016780](https://doi.org/10.1145/2016741.2016780).
+JSON can only handle particular JavaScript data types and has formatting rules that differ from typical JavaScript objects. JSON supports arrays, strings, booleans, the ```null``` value and nested objects that contain these values. However, strings must be contained in double-quotes, numbers cannot begin with 0 and the ```NaN``` and ```Infinity``` number values cannot be used. This also means that ```BigInt```, ```undefined``` and ```Symbol``` values cannot be stored in their natural formats, neither can functions.
 
-PostgreSQL Documentation (n.d.) _[13.1 Introduction: Chapter 13 Concurrency Control](https://www.postgresql.org/docs/16/mvcc-intro.html)_, PostgreSQL website, accessed 6 June 2024.
+JavaScript has a ```JSON``` global object with key methods to utilise and generate JSON files. ```JSON.parse()``` accepts a JSON string and returns a JavaScript object populated with the string's data. Inversely, ```JSON.stringify()``` converts a JavaScript object to a JSON string.
 
----------------------------------------------------SUBMISSION---------------------------------------------------
+For example:
 
-- submit as .pdf
-- naming convention: LukeSkywalker_T2A2-A.pdf
+```Javascript
+let cat = {'name': "Mr Wobbles"}
+cat = JSON.stringify(cat)
+console.log(cat)
+// Console shows:
+// '{"name":"Mr Wobbles"}'
+// Note - "name" rather than 'name'
+JSON.parse(cat)
+// Returns: { name: 'Mr Wobbles' }
+// Note - name rather than "name" or 'name'
+let house = {occupants: null}
+JSON.stringify(house)
+// Returns: '{"occupants":null}'
+let mrSquirell = {aspirations: undefined}
+JSON.stringify(mrSquirell)
+// Returns: '{}'
+```
+
+Once a JSON string has been converted to a JavaScript object, it can be manipulated in any way that an object can. By extension, any value in the object can be accessed using string or dot notation.
+
+For example:
+
+``` Javascript
+cat = {name: "Trevor", hobbies: ["sleeping", {"martial arts": ["karate", "judo"]}]}
+cat = JSON.stringify(cat)
+// Converting cat to JSON string:
+// '{"name":"Trevor","hobbies":["sleeping",{"martial arts":["karate","judo"]}]}'
+cat = JSON.parse(cat)
+// Converting cat from JSON string to JS object:
+cat.hobbies[1]['martial arts'][0]
+// 'karate'
+```
+
+Whilst JSON does not accept particular datatypes, developers can work around this by storing data in different formats for later conversion. For example, a phone number cannot be stored as a number value in JavaScript objects or JSON alike because it begins with a 0 and contains too main digits. Instead, a phone number could be stored as a string. In a unique case, ```BigInt``` values cannot be converted to JSON strings using ```JSON.stringify()``` and will raise an error but this can be worked around by writing a custom prototype function to handle their automatic conversion (MDN Web Docs, 2024a and MDN Web Docs, 2024c).
+
+The ```JSON.stringify()``` method provides another method to manipulate JSON objects via its second parameter: ```replacer```. The ```replacer``` parameter can be an array containing designated key values, listed as strings, to contain in the JSON string or a function that returns any key or value to include.
+
+For example:
+
+```JavaScript
+let bigObj = {value: 111222333444n}
+bigObj
+// { value: 111222333444n }
+JSON.stringify(bigObj)
+// Throws:
+// Uncaught TypeError: Do not know how to serialize a BigInt
+BigInt.prototype.toJSON = function () { return this.toString() }
+// Specifies how to handle BigInt objects when they are parsed by JSON.stringify()
+// This method converts it to a string
+JSON.stringify(bigObj)
+// Returns: 
+// '{"value":"111222333444"}'
+
+let numbers = {a: 2, b: 3}
+JSON.stringify(example, (key, value) => {if (value != '2') {return value}})
+// Returns:
+// '{"b":3}'
+JSON.stringify(example, ['b'])
+// Returns:
+// '{"b":3}'
+```
+
+Another useful way to utilise and manipulate JSON within JavaScript is to save and access it using the browser's ```sessionStorage``` or ```localStorage```. ```sessionStorage``` is an amount of memory in a browser that can hold data until the session ends whilst ```localStorage``` is an amount of memory that perseveres until a user deletes it. Both of these objects accept string data and can be accessed and saved-to in JavaScript scripts, making them perfect for caching JSON when creating web applications (W3 Schools, 2024).
+
+For example:
+
+```JavaScript
+let usefulData = {content: "Don't forget to brush your teeth each night"}
+let usefulJSON = JSON.stringify(usefulData)
+localStorage.setItem("storedExample", usefulJSON)
+// Saves the usefulJSON string as "storedExample" in local storage
+
+let retrievedString = localStorage.getItem("storedExample");
+let retrievedJSON = JSON.parse(restievedString);
+// The JSON string is retrieved from local storage and converted to a JSON object for later manipulation, mirroring the original usefulData object
+```
+
+JSON is a popular and convenient format to send and receive data to be handled by different coding languages. Within JavaScript, the ```JSON``` global object and its methods provide convenient conversion tools that allow users to handle JSON formatting easily. These methods have notable customisable options that should be considered to handle differently-typed data. In addition, JSON formatting is particularly useful for caching data in browsers when creating web applications.
+
+### References
+
+MDN Web Docs (2024a) _[JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)_, MDN Web Docs website, accessed 1 August 2024.
+
+MDN Web Docs (2024b) _[Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)_, MDN Web Docs website, accessed 31 July 2024.
+
+MDN Web Docs (2024c) _[JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)_, MDN Web Docs website, accessed 31 July 2024.
+
+W3 Schools (2024) _[JSON.stringify()](https://www.w3schools.com/js/js_json_stringify.asp)_, W3 Schools website, accessed 31 July 2024.
