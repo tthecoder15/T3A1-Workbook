@@ -1,12 +1,5 @@
 # Tom Tutone T3A1-Workbook
 
-- Due 18.8.24 (3 weeks)
-- [https://ait.instructure.com/courses/5200/assignments/56761]
-
-Sources:
-
-- consider if people in the industry would trust it e.g./ AWS data
-
 ## Q1. Provide an overview and description of a standard source control process for a large project /6
 
 When working on a large-scale project, backing up the project, tracking its changes and making it easily accessible to team members is a fundamental consideration. Using source control software, such as Git and Mecurial, is the industry standard for programmers and allows teams to share and work on projects concurrently. These tools monitor changes in a project's files, integrate them into a defined "main" collection and provide functions to update or regress files collection so that team members can access the project's most current stable files.
@@ -97,14 +90,11 @@ Designing and creating a web server API using Flask and Postgres was a project t
 
 A core challenge creating the application was designing the database to allow for RESTful endpoints. When I began the project, I found it challenging to identify what data needed to be stored and how to best structure the database tables. Specifically, the task of normalising the data was daunting. To handle this macro challenge, I broke down the task down into its technical and conceptual elements. First, I found it helpful to research similar API tools that childcare businesses used to facilitate their data and communication. I then identified the features that my application needed to emulate these applications and read reviews to get inspiration for how to improve them. For example, one key design choice that affected the database was to improve the security of the app by reducing the amount of personal input data required. To refine the tables, I completed additional research into ERD diagrams and compared my work to industry examples. Gradually, I improved the tables by considering the data that should be available at the different endpoints based on different imagined user stories. In addition, I continued to review the table designs throughout the API's implementation which highlighted simplifying changes such as using populated foreign keys with specific data to make the returns clearer and allowed me to remove repetitive columns.
 
-In addition to database design skills, the task required me to improve my understanding of models and schemas as well as my ability to leverage software documentation. Connecting the Flask routes to the database was simple to implement yet, as I continued programming, I found that my models allowed users to input flawed data which would raise errors. marshmallow's validation tools proved a powerful and convenient way to prevent these errors but, I did not initially understand the breadth of methods available. For example, the API featured input routes where I wanted users choose one of three values yet I was not able to design a front-end solution to enforce this. In this instance, I was able to refer to the marshmallow documentation and find the ```OneOf()``` validator which was perfect for the situation. In addition, I had trouble handling datatype errors which would arise when POST requests were submitted with  formatting inconsistencies. One example of this was, when handling a phone number, Python disregards an initial zero digit which, in turn, would raise a marshmallow validation error. This was challenging to identify but, after logging the data at each stage, I was able find the error and convert a number input to a string before adding the zero again, knowing that marshmallow can interpret both numbers and strings. Another example was handling boolean values for an ```is_admin``` attribute. The request body would inconsistently be interpretted and it took lengthy troubleshooting to recognise that an error would arise when the boolean was not submitted as a string. I solved this issue by generating a matching boolean value based on the input string allowing users to submit either a boolean or a string and get the same result. Each of these issues required patient research and a more through understanding of Flask, marshmallow and SQLAlchemy behaviours. Preventing these issues at the API level makes the project more robust and easy to incorporate into a front-end application.
+In addition to database design skills, the task required me to improve my understanding of models and schemas as well as my ability to leverage software documentation. Connecting the Flask routes to the database was simple to implement yet, as I continued programming, I found that my models allowed users to input flawed data which would raise errors. marshmallow's validation tools proved a powerful and convenient way to prevent these errors but, I did not initially understand the breadth of methods available. For example, the API featured input routes where I wanted users choose one of three values yet I was not able to design a front-end solution to enforce this. In this instance, I was able to refer to the marshmallow documentation and find the ```OneOf()``` validator which was perfect for the situation. In addition, I had trouble handling data type errors which would arise when POST requests were submitted with  formatting inconsistencies. One example of this was, when handling a phone number, Python disregards an initial zero digit which, in turn, would raise a marshmallow validation error. This was challenging to identify but, after logging the data at each stage, I was able find the error and convert a number input to a string before adding the zero again, knowing that marshmallow can interpret both numbers and strings. Another example was handling boolean values for an ```is_admin``` attribute. The request body would inconsistently be interpretted and it took lengthy troubleshooting to recognise that an error would arise when the boolean was not submitted as a string. I solved this issue by generating a matching boolean value based on the input string allowing users to submit either a boolean or a string and get the same result. Each of these issues required patient research and a more through understanding of Flask, marshmallow and SQLAlchemy behaviours. Preventing these issues at the API level makes the project more robust and easy to incorporate into a front-end application.
 
 Designing and creating a server API required technical knowledge of how to use a Flask, PostgreSQL, SQLAlchemy and marshmallow tech stack as well as the ability to troubleshoot errors in a pragmatic way. In addition, a key challenge of creating a successful API is designing the database in a considered way. With each challenge, I was able to overcome the problem with research and patience.
 
 ## Q6. With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature /6
-
-- here's what I would do differently
-- Evaluates effectiveness of knowledge and skills accurately, providing examples, and providing an insightful improvement on each skill
 
 One significant project I recently completed was creating a CLI application using Python. The application works by presenting the user with a string describing a mysterys Pokemon trading card. After receiving a hint, the user can guess the card or receive one or two more hints before guessing it. The user's guess is evaluated, with a simple validator that checks for typos to give the user a second chance, and the player receives points or the chance to play again if they are right or wrong. After each correct answer the user's score is compared to the leaderboard and, if it is higher, they can save their score with a name. Within the game there is an easy and hard mode as well. When creating this app, I had one week to design and implement it and I used a rudimentary Agile methodology to complete the task in time. Reflecting upon the project, there are clear improvements I would make to my project management processes and skills for future tasks.
 
@@ -122,9 +112,9 @@ Fernandez, D. J. and Fernandez, J. D. (2008) ‘Agile Project Management —Agil
 
 When JavaScript code is executed, it is typically interpreted line-by-line, in sequential order. This order can be altered by using control flow statements which make particular lines execute multiple times or be skipped based on certain conditions (MDN Web Docs, 2024a). In JavaScript, the ```if```, ```if else```, ```switch```, ```ternary operator``` and ```for loops``` are all techniques that can alter the order that lines are executed (MDN Web Docs, 2024b).
 
-The ```if``` statement evaluates whether a condition is true and, if so, executes a designated code block before continuing the script. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are evaluated as true. ```if``` and ```if else``` statements require the use of operators that return true or false. In JavaScript, a function that returns ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```, or a variable assigned one of these values, is considered falsy and will cause a particular ```if``` condition to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same datatype and have the exact same values whilst loose equality will complete a type conversion to see if the values are the same when formatted in the same data type.
+The ```if``` statement evaluates whether a condition is true and, if so, executes a designated code block before continuing the script. ```if else``` is an alternative method that can be used to evaluate multiple possible conditions and provide a default response if none of the conditions are evaluated as true. ```if``` and ```if else``` statements require the use of operators that return true or false. In JavaScript, a function that returns ```false```, ```undefined```, ```null```, ```0```, ```NaN```, ```""```, or a variable assigned one of these values, is considered falsy and will cause a particular ```if``` condition, checking for a truthy value, to not execute (MDN Web Docs, 2023a). Conditions can also be checked for loose quality or strict equality. Strict equality compares two values to check if they are both the same data type and have the exact same values whilst loose equality will complete an automatic type conversion to see if the values are the same when formatted in the same data type.
 
-Below is an example of control flow and equality types:
+Below is an example of control flow using ```if``` statements:
 
 ``` JavaScript
 function eval () {
@@ -134,17 +124,17 @@ var answer = "true"
 // Initialises 'answer' variable and assigns it a string "true" value
 if (evaluation) {
     return
-// Evaluates if 'evaluation' is truthy
+// Checks if 'evaluation' is truthy
 }
 else if (answer === true) {
     evaluation = "Truly true"
     return
-// Evaluates if 'answer' is equal to the true boolean value
+// Checks if 'answer' is strictly equal to the 'true' boolean value
 }
 else if (answer) {
     evaluation = "Sort of true"
     return
-// Evaluates if 'answer' is truthy
+// Checks if 'answer' is truthy
 }
 else {
     evaluation = "Not, in any way, true"
@@ -160,11 +150,20 @@ eval()
 
 ```
 
-```eval``` first initialises the variables ```evaluation``` and ```answer``` and then begins evaluations on the variables. The first if statement checks if ```evaluation``` is a truthy value which, because it is a blank string, is not true so it will not execute. The second ```if``` statement checks if ```answer``` is a boolean value equaling ```true```, however, it will not execute because answer is a string rather than a boolean so this evaluation is false. The third if statement converts answer to a boolean by checking if it is one of ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```. Because it is not, and answer holds a value, it evaluates to true. ```evaluation``` is then set to "Sort of true", the following else statement is skipped and the rest of the function executes so that the console displays "Sort of true". The else statement would execute if none of the other ```if``` statements were true but, in this example is not neccessary and does not execute.
+```eval``` first initialises the variables ```evaluation``` and ```answer``` and then begins assessing the ```if``` statements. The first ```if``` statement checks if ```evaluation``` is a truthy value which, because it is a blank string, a falsey value, it will not execute. The second ```if``` statement checks if ```answer``` is a boolean value equaling ```true```, however, it will not execute because answer is a string rather than a boolean meaning the values are not strictly equal. The third ```if``` statement checks if ```answer``` is any truthy value, not one of ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```. Because the variable holds a truthy value, it evaluates to true, the linked code block executes and ```evaluation``` is set to a value of "Sort of true". The following else statement is skipped and the rest of the function executes so that the console displays "Sort of true". The else statement would execute if none of the other ```if``` statements were true but, in this example is not neccessary and does not execute.
 
-Another control flow statement is the ```switch``` statement which describes the different possible conditions a variable could fulfill and executes the matching code block or a default code block if none are match. Otherwise, the ```ternary operator``` is an operator that checks for a condition and executes a "true" block or a "false" code block depending on what the condition evaluates to.
+Another control flow tool is the ```switch``` statement which describes the different possible conditions a variable could fulfill and executes the matching code block or, if no described cases match, a ```default``` code block executes. Otherwise, the ```ternary operator``` checks for a condition and executes a "true" code block or a "false" code block depending on what the condition evaluates to.
 
-Loops are an alternative to conditional statements that can be used to control flow that can be used to execute code deviating from line-by-line execution. Specifically, JavaScript has various ```for``` loops as well as ```while``` loops. ```for``` loops repeat a block of code until it evaluates to false such as iterating through an array until there are no more values that have not been iterated. ```while``` statements loop a block of code until a condition evaluates to false. Similarly, ```do...while``` loops execute a block of code before evaluating a condition, stopping when the condition evaluates as falsey (MDN Web Docs, 2023b).
+```Javascript
+let x = 10
+// Initialises variable 'x' with a value of 10
+x > 9 ? console.log("x is greater than 9") : console.log("x is less than 9")
+// A ternary operator, evaluates if 'x > 9' is truthy and executes the corresponding code
+// Console shows:
+// x is greater than 9
+```
+
+Loops are an alternative to conditional statements that can be used to control flow and execute code deviating from line-by-line sequencing. Specifically, JavaScript has various ```for``` loops as well as ```while``` loops. ```for``` loops repeat a block of code until it evaluates to false such as the ```for...in``` and ```for...of``` loops which iterate through each value in an iterable and allow the user to access the iteration indexes or data respectively. ```while``` statements similarly loop a block of code until a condition evaluates to false. ```while``` loops are particularly useful for looping an unknown number of times such as requesting a user input until a suitable value is provided. Similarly, ```do...while``` loops execute a block of code before evaluating a condition, stopping when the condition evaluates as falsey (MDN Web Docs, 2023b).
 
 For example:
 
@@ -176,7 +175,7 @@ do {
 } while (counter != 10)
 ```
 
-In this example, ```counter``` is initialised as 0. The ```do``` block adds 2 to ```counter``` and prints the updated value then evaluates whether counter does not equal 10. The ```do``` block will thus loop 5 times until counter equals 10 then exit the loop and continue the script.
+In this example, ```counter``` is initialised as 0. The ```do``` loop block adds 2 to ```counter``` each cycle and prints the updated value before the loop evaluates whether counter does not equal 10. The ```do``` block will thus loop 5 times until ```counter``` equals 10 then exit the loop and continue the script.
 
 ### References
 
@@ -190,12 +189,7 @@ MDN Web Docs (2023b) _[Loops and iteration](https://developer.mozilla.org/en-US/
 
 ## Q8. Explain type coercion, using examples from the JavaScript programming language /6
 
-- quirks that are unique to JS
-- Provides a thorough explanation of control flow in programming
-
-Type coercion in JavaScript is when a value is implicitly converted from one type to another automatically (MDN Web Docs, 2024a). This is different from conversions that are explicitly declared such as the String() or Number() methods.
-
-There are a variety of circumstances in which JavaScript will automatically change a data type to complete process. The loose equality operator ```==``` will convert strings and booleans to numbers to compare their values against numbers (Samoshkin, 2018).
+Type coercion in JavaScript occurs when a value is implicitly converted from one data type to another automatically (MDN Web Docs, 2024a). This is different from conversions or generations that are explicitly declared such as the ```String()``` or ```Number()``` constructors. There are a variety of circumstances in which JavaScript will automatically change a data type when completing a process. The loose equality operator ```==``` will convert strings and booleans to numbers to compare their values against numbers (Samoshkin, 2018).
 
 For example:
 
@@ -215,7 +209,7 @@ For example:
 // Returns '1010'
 ```
 
-However, other number-based operators including ```<```, ```>=```, ```-```, ```*```, ```%``` and the bitwise operators, which consider binary values, coerce a string to a number.
+Other number-based operators including ```<```, ```>=```, ```-```, ```*```, ```%``` and the bitwise operators, which consider binary values, coerce a string value to a number.
 
 For example:
 
@@ -225,7 +219,8 @@ For example:
 "15" / 3
 // Returns 5
 "5" ^ "3"
-// converts "5" to 101, converts "3" to 11
+// Bitwise "XOR" operator
+// JS implicitly converts "5" to 101 and converts "3" to 11
 // 101 XOR 011 = 110
 // Returns 7  
 ```
@@ -248,9 +243,9 @@ Boolean("and")
 
 ```
 
-In the above example, ```"and"``` evaluates to true when it is explicitly converted because it is not one of the values ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```. The ```&&``` operator checks if the compared values are truthy by converting them implicitly to boolean. If both values are truthy, the last truthy value is returned. If one of the values is falsy, that value is returned, hence why ```false``` and ```NaN``` are returned in the last two comparisons (MDN Web Docs, 2024b).
+In the above example, ```"and"``` evaluates to true when it is explicitly converted because it is not one of the values ```false```, ```undefined```, ```null```, ```0```, ```NaN``` or ```""```. The ```&&``` operator checks if the compared values are truthy by converting them implicitly to booleans. If both values are truthy, the last truthy value is returned. If one of the values is falsy, that value is returned, hence why ```false``` and ```NaN``` are returned in the last two comparisons (MDN Web Docs, 2024b).
 
-When non-primitive values such as objects are compared or evaluated, they are coerced to a primitive data type (Samoshkin, 2018). If added to compared using a logical operator or added using ```+```, the contents of an array will be converted to a string. Similarly, an object will be converted to a string as well. If a mathmetical operator is used, arrays and objects will be converted into numbers results in a NaN value.
+When non-primitive values such as objects are compared or evaluated, they are coerced to a primitive data type (Samoshkin, 2018). If an array is compared using a loose equality operator or added to a string using ```+```, the contents of an array will be converted to a string for the process. Similarly, an object will be converted to a string as well. If a mathmetical operator is used, arrays and objects will be converted into numbers, resulting in a ```NaN``` value.
 
 For example:
 
@@ -267,7 +262,7 @@ For example:
 // Returns NaN
 ```
 
-JavaScript type coercion is a useful feature which can reduce code by eliminating explicit conversion of variables. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
+JavaScript type coercion is a useful feature which can reduce code by eliminating the need to explicitly convert of variable data types. However, the default coercion behaviour of some data types can lead to unexpected results if not accounted for.
 
 ### References
 
@@ -279,10 +274,7 @@ MDN Web Docs (2024b) _[Logical AND (&&)](https://developer.mozilla.org/en-US/doc
 
 ## Q9. Explain data types, using examples from the JavaScript programming language /6
 
-- types, unique to JS, show what the concept is and how to use it
-- Provides a thorough explanation of data types in programming
-
-In JavaScript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be values that are one of these data types or an object such as a function. JavaScript is a dynamic language with dynamic datatypes which allows any variable to be assigned any type and a variable can be changed at any time to a different datatype (MDN Web Docs, 2024a). The primitive data types have a variety of methods and behaviours inherently linked to them that assist in their usage within JavaScript syntax. A variable's datatype can be checked using the built-in ```typeof()``` function.
+In JavaScript, there are seven primitive data types: ```number```, ```string```, ```boolean```, ```null```, ```undefined```, ```symbol``` and ```bigInt```. Variables can be assigned values that are one of these data types or an object such as a function or an array. JavaScript is a dynamically typed language which allows any variable to be assigned any data type and allows variables to be changed at any time to a different data type (MDN Web Docs, 2024a). The primitive data types have a variety of methods and behaviours inherently linked to them that assist in their usage within JavaScript syntax. A variable's data type can be checked using the built-in ```typeof()``` operator.
 
 For example:
 
@@ -295,33 +287,37 @@ typeof(example)
 // Returns 'number'
 ```
 
-Primitive data types are immutable meaning that a primitive value cannot be altered. For example, the ```number``` ```4``` cannot be altered within JavaScript to equal ```5```. However the other type of data, objects, are mutable and can store primitive data to be changed later. Objects can be considered as a collection of primitive value properties. In addition, primitive data types have methods associated with them that can assist in modifying objects or variables that contain them.
+Primitive data types are immutable meaning that a primitive value cannot be altered. For example, the ```number``` ```4``` cannot be altered within JavaScript to equal ```5``` or the second index of a declared string "rabbits" cannot be changed by targeting its index and assigning it a new value. However, objects are mutable and can store nested values that are primitively typed to be changed later. Objects can be considered as a collection of primitive value properties. In addition, primitive data types have methods associated with them that can assist in modifying objects or variables that store them.
 
 ```JavaScript
 let tree = "oak"
 tree[0] = "bark"
 console.log(tree)
+// Console shows:
 // 'oak' 
 // The string value is immutable
 tree = "bark"
+// The tree variable can be changed however
 console.log(tree)
 // Console shows 'bark'
-// Tree variable can be changed
+
 let forest = {trees: "oak"}
 // Assigns forest an object value with a key-pair "trees: "oak""
 console.log(forest.trees)
-// "oak"
+// Console shows:
+/// 'oak'
 forest.trees = "pine"
+// Object attribute trees is reassigned
 console.log(forest.trees)
 // Console shows "pine"
 // Objects are mutable
 forest.trees.concat(" and redgums") 
-// Uses the string datatype's inbuilt concat() method
+// Uses the string data type's inbuilt concat() method
 console.log(forest.trees)
 // "oak and redgums"
 ```
 
-There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified with a ```number``` datatype. These qualities should be noted when using the loose equality operator.
+There are particular quirks to some of the data types and their associated values. Notably, ```null``` and ```undefined``` behave similarly when used in operations but are intended for different uses (MDN Web Docs, 2024a). ```null``` is used to represent the absence of an object whereas ```undefined``` is the lack of a value. Similarly, ```NaN``` is a value that represents something that is not a number but the value itself is classified within the ```number``` data type. These qualities should be noted when using the loose equality operator.
 
 For example:
 
@@ -335,43 +331,54 @@ typeof(example2)
 let example3 = NaN
 typeof(example3)
 // Returns 'number'
+if (typeof(example3) == 'number') { console.log("It's a number")}
+// Console shows:
+// "It's a number"
 ```
 
-```bigint``` is a primitive data type used for handling numbers larger or smaller than the minimum number values of JavaScript. Typically, if a value is added to the maximum ```number``` value, JavaScript will round unpredictably. ```bigint``` does not have this problem, however, and will add accurately. ```bigint``` values can be generated dynamically by adding ```n``` after a number when a variable is being assigned (MDN Web Docs, 2024b). ```symbol``` is a data type used to create constants that are definitively unique. Symbols can be passed as a key value to an object ensuring the symbol value will not clash with a property assigned later and, when generating the symbol, a symbol can hold additional data. Symbols are also not enumerable meaning that they will not be considered when an object is iterated. This quality can be used to keep particular data more private, although the data is can still be accessed in other ways (Playcode.io, n.d.). The ```bigint``` and ```symbol`` datatypes allow for unique functionality.
+```BitInt``` is a primitive data type used for handling numbers larger than the maximum value or smaller than the minimum value of the JavaScript ```number``` data type. For example, if a value is added to the maximum ```number``` value, JavaScript will round unpredictably. ```BitInt``` does not have this problem, however, and will add accurately. ```BitInt``` values can be generated dynamically by adding ```n``` to the end of a number value when it is being assigned or by using the ```BigInt()``` constructor (MDN Web Docs, 2024b). ```symbol``` is a data type used to create constants that are definitively unique. Symbols can be passed as a key value to an object ensuring the symbol value will not clash with a property assigned later and, when generating the symbol, a symbol can hold additional data also. Symbols are not enumerable meaning that they will not be considered when an object is iterated. This quality can be used to keep particular data more private, although the data can still be accessed in other ways (Playcode.io, n.d.). The ```BitInt``` and ```symbol`` data types allow for unique functionality.
 
 For example:
 
 ``` JavaScript
 let maxNumber = Number.MAX_SAFE_INTEGER
+// Initialises maxNumber with the largest value: 
 // 9007199254740991
 maxNumber + 2
 // 9007199254740992
 // Value is incorrectly added
+
 let bigIntMax = BigInt(Number.MAX_SAFE_INTEGER)
 // 9007199254740991n
 bigIntMax + 2n
 // 9007199254740993n
-// Must add using bigint notation
-// Successfully tracks update
+// Must add using BitInt notation
+// Successfully adds 2n
+
 const house = Symbol("bricks")
 let constructionPlans = {[house]: "pink"}
 // Symbol can be passed as an object key
 constructionPlans.house = "blue"
-// Does not overwrite symbol house
+// Creates new constructionPlans attribute 'house'
+// Does not overwrite symbol value 'house'
 console.log(constructionPlans)
+// Console shows:
 // { house: 'blue', [Symbol(bricks)]: 'pink' }
 console.log(Object.keys(constructionPlans))
+// Console shows:
 // ['house']
-// This is the string value, symbol attribute is not shown
+// Only the string value is shown, symbol attribute is not shown
 console.log(constructionPlans[house])
+// Console shows:
 // pink
 console.log(house)
+// Console shows:
 // Symbol(bricks)
-// Symbol can be accessed out of the context of the object it is in
+// Symbol can be accessed out of the context of an object assigned with it as a key
 
 ```
 
-The various primitive data types of JavaScript are used to handle different types of values with unique properties. For this reason, they all have specific methods associated with them to extend their functionality. Each primitive type has associated behaviour within the JavaScript language and their properties and methods can be leveraged in objects to create advanced funcitonality.
+The various primitive data types of JavaScript are used to handle different values and associate them with appropriate properties. For this reason, they all have specific methods built-in to manipulate them. Each primitive data type triggers default behaviour within the JavaScript language and these traits can be leveraged in objects to create advanced, descriptive data sets.
 
 ### References
 
@@ -385,17 +392,14 @@ Playcode.io (n.d.) _[JavaScript Symbols](https://playcode.io/javascript/symbols)
 
 ## Q10. Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
-- explain a concept, how to use it
-- Demonstrates an extensive ability to manipulate arrays
-- .filter, .map, .sort
-
-Arrays are mutable objects used to store a collection of items in a single variable. Arrays are resizeable and can contain a mix of datatypes including objects. Arrays have an inherent length property which is related to the number of values with in the array. Values within an array are zero-indexed with a numbered key which can be used to target them. Notably, arrays can be explicitly altered to have their length extended and a value can be assigned to a non-sequential index. When this occurs, the indexes between the two values that are assigned values hold an ```undefined``` value.
+Arrays are mutable objects used to store a collection of data in a single collection. Arrays are resizeable and can contain a mix of data types including nested objects. Arrays have an inherent length property which is related to the number of entries within the array. Values within an array are zero-indexed with a numbered key which can be used to target them. Notably, arrays can be explicitly altered to have their length extended and a value can be assigned to a non-sequential index. When this occurs, the indexes between the two values that are assigned values hold an ```undefined``` value.
 
 For example:
 
 ```JavaScript
 let colours = ['blue', 'pink', 'red']
 console.log(colours)
+// Console shows:
 // [ 'blue', 'pink', 'red' ]
 colours.length
 // 3
@@ -403,12 +407,13 @@ colours[2]
 // 'red'
 colours[6] = 'green'
 console.log(colours)
+// Console shows:
 // [ 'blue', 'pink', 'red', <3 empty items>, 'green' ]
 colours.length
 // 7
 ```
 
-Index targeting is a rudimentary way to alter an index and there are a variety of prototype methods that can be used to alter them. There are two types of methods to manipulate arrays: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating alternative counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative, two functions that remove values from arrays (MDN Web Docs, 2024). There are many methods that can manipulate and mutate an array and its values such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the indexes of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which returns a merged copy array of the given arguments with the x value as the first value, ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
+There are a variety of data type methods that can be used to alter arrays. These methods can be split into two categories: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative both being functions that return a value from an array (MDN Web Docs, 2024). Other methods are used to change the values in an array such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the index order of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which mimics ```push()``` and returns a copy array of the given arguments with the x value as the first value(s), ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
 
 For example:
 
@@ -419,15 +424,16 @@ colours.slice(0, -1)
 // [ 'blue', 'red' ]
 colours
 // [ 'blue', 'red', 'green' ]
-// Colours is unaltered
+// colours is unaltered by .slice()
+
 colours.pop()
 // 'green'
 colours
 // [ 'blue', 'red' ]
-// pop() mutated Colours
+// colours was mutated by .pop()
 ```
 
-Arrays also have a collection of iterative methods which consider all values in an array and parses each value through a given callback function with different effects based on the specific method. Iterative methods are non-mutating and return copies of the relevant results. ```forEach()``` accepts a callback function and simply applies that function to all values in the array individually but does not return anything. ```filter()``` takes a callback function and returns a new array with only values that return a truthy value when passed to the provided function. ```map()``` applies a callback function to all values in an array and returns the results in a new array. ```sort()``` is an array method used to sort indexes of an array based on the criteria of a passed compare function. Notably, whilst ```sort()``` is similar to an iterative function, it mutates the array and sometimes invokes the callback function multiple times on a single index to sort the values meaning it is not a true iterative function.
+Arrays also have a collection of iterative methods which consider all values in an array and parses each through a given callback function with different effects. Iterative methods are non-mutating. ```forEach()``` accepts a callback function and simply applies that function to all values in the array individually but does not return anything implicitly. ```filter()``` takes a callback function and returns a new array with only values that return a truthy value when passed to the provided function. ```map()``` applies a callback function to all values in an array and returns the results in a new array. ```sort()``` is an array method used to sort indexes of an array based on the criteria of a passed compare function. Notably, whilst ```sort()``` is similar to an iterative function, it mutates the array and sometimes invokes the callback function multiple times on a single index to sort the values meaning it is not a true iterative function.
 
 For example:
 
@@ -445,17 +451,17 @@ colours.map((val) => val + " and yellow")
 console.log(colours)
 // Console shows:
 // [ 'blue', 'red', 'green' ]
-// colours was unaltered
+// colours was unaltered by .forEach(), .filter() and .map()
 colours.sort((a, b) => a.length - b.length)
 // [ 'red', 'blue', 'green' ]
-// Call back function sorts by shortest length first
+// Callback function sorts by shortest length first
 console.log(colours)
 // Console shows:
 // [ 'red', 'blue', 'green' ]
-// colours array is mutated
+// colours array was mutated by .sort()
 ```
 
-Arrays can be manipulated in various ways making them flexible tools for data storage. Array's iterative methods are particularly powerful for altering arrays according to sophisticated criteria. Essentially, arrays can be altered in mutative and non-mutative ways and there are always different techniques to achieve each type of alteration.
+Arrays can be manipulated in various ways making them flexible tools for data storage. Arrays' iterative methods are particularly powerful for batch editing or altering according to sophisticated criteria. Essentially, arrays can be altered in mutative and non-mutative ways and there are always different techniques to achieve each type of alteration.
 
 ### References
 
@@ -463,11 +469,7 @@ MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
-- Demonstrates an extensive ability to manipulate objects
-
-(MDN Web Docs, 2024a)
-
-Objects are used in JavaScript to store properties and assign values to them for reference or manipulation. Properties and their associated values are key and value pairs and the key value's can be initialised with a name (a word without appostrophes), a string, a symbol or a number (MDN Web Docs, 2024). A property value can be a primitive data type or another object such as a function, an array or another nested object. A property that is a function is referred to as a method and this is how data types have associated functions that can be easily called. Each object property can be accessed using dot notation or bracket notation, except for properties with spaces which must be accessed using bracket notation. By referring to an object's property key, it can often be altered. If a property does not exist yet is assigned a value, a new property will be initialised with that value.
+Objects are used in JavaScript to store properties and assign values to them for reference or manipulation. Properties and their associated values create key-value pairs where the key value can be a name (a word without appostrophes), string, symbol or number datatype (MDN Web Docs, 2024). A property value can be a primitive data type or another object such as a function, an array or another nested object. A property that is a function is referred to as a method such as the functions accessible to each data type. Each object property can be accessed using dot notation or bracket notation, except for properties with spaces which must be accessed using bracket notation. By referring to an object's property key, it can typically be reassigned. If a property that has not been declared yet is assigned a value, a new property will be initialised with that value.
 
 For example:
 
@@ -475,7 +477,9 @@ For example:
 let identifier = "name"
 let dog = {
     identifier: "Charles",
+    // identifier is not wrapped in apostrophes
     "personality type": "friendly"
+    // 'personality type' has a space and must be wrapped in apostrophes
 }
 console.log(dog)
 // Console shows:
@@ -485,11 +489,13 @@ dog.identifier
 dog['personality type']
 // 'friendly
 dog.enemy = "cats"
+// dog.enemy is initialised with this line
 console.log(dog)
+// Console shows:
 // { identifier: 'Charles', 'personality type': 'friendly', enemy: 'cats' }
 ```
 
-Objects can be created by listing properties within the object initializer syntax ```{}```, using ```Object.create()``` syntax or by using ```new ObjectName``` where ObjectName is a defined object constructor function. Defining an object constructor function allows a particular object structure to be reused as many times as required.
+Objects can be created by listing properties and values within the object initializer syntax ```{}```, using the ```Object.create()``` method or by using ```new ObjectName``` where ObjectName is a defined object constructor function. Defining an object constructor function allows a particular object structure to be reused as many times as required.
 
 For example:
 
@@ -499,6 +505,7 @@ function Person(name, birthYear) {
     this.birthYear = birthYear,
     this.planet = "Earth"
     this.birthdaySong = function() {console.log("Happy birthday to me!")}
+    // .birthdaySong() is initialised as a method of Person objects
 }
 let student1 = new Person("Kyle", 2000)
 console.log(student1)
@@ -514,7 +521,9 @@ student1.birthdaySong()
 // Happy birthday to me!
 ```
 
-When an object constructor function contains a method like in the above example, the method is stored in each instance created using the constructor function. Alternatively, objects of the same type can share attributes including methods. Additional methods can be added this way by using the ```ObjectName.prototype``` syntax where ObjectName is a constructor name. The ```.constructor.name``` property of an object returns the name of the function used to construct it. To define a abstracted functions to interact with an object's properties or to make property keys obscured, objects can be initialised with ith getter and setter methods. These methods are attributes assigned using the ```get``` and ```set``` keywords followed by a function that returns or alters a different property. Getters and setters can be declared after an object and instances exist by using the ```.defineProperties()``` function which will add the functions to all instances similar to ```.prototype``` syntax.
+When an object constructor function contains a method like in the above example, the method is stored in each instance created using the constructor function. Alternatively, objects of the same type can share attributes without each instance containing them. Additional methods can be added this way by using the ```ObjectName.prototype``` syntax where ObjectName is a constructor name. The ```.constructor.name``` property of an instance returns the name of the constructor used to create it so that its prototype attributes can be changed.
+
+Getter and setter methods can also be assigned to objects to obscure and abstract instance properties. These methods can be declared in a constructor function using the ```get``` and ```set``` keywords followed by a function that returns or alters an object property. Getters and setters can also be declared for a particular instance when it already exists by using the ```.defineProperties()``` function.
 
 For example:
 
@@ -525,8 +534,9 @@ function Person(name) {
 let boy1 = new Person("Jeff")
 let boy2 = new Person("Stu")
 boy2.constructor.name
-// Returns 'Person'
+// 'Person'
 Person.prototype.grade = 2
+// Assigns grade property to all Person instances and sets it to value 2
 console.log(boy1.grade)
 // Console shows:
 // 2
@@ -545,39 +555,47 @@ Object.defineProperties(boy2, {
         }
     }
 })
+// Assigns getter and setter functions for boy2
 boy2.setName = "Charles"
+// Calls boy2's name setter function
 console.log(boy2.getName)
+// Calls boy2's name getter function
 // Console shows:
 // 'Charles'
 console.log(boy2.name)
+// Alternative way to access boy2's name value
 // Console shows:
 // 'Charles'
 ```
 
-Object properties can be iterated through for manipulation as well. The inbuilt ```Object.keys()``` returns all property key values that are enumerables which excludes values such as getter and setter functions as well as prototype properties. ```Object.getOwnPropertyNames()``` returns all key names including non-enumerable keys excluding protype properties again. Otherwise, a ```for in``` loop can be used to iterate through an object and returns all emumerable properties including prototype properties. Each property can than be used or manipulated in the code block.
+Object properties can be iterated through for manipulation as well. The inbuilt ```Object.keys()``` returns all property key values that are enumerables which excludes values such as getter and setter functions as well as prototype properties. ```Object.getOwnPropertyNames()``` returns all key names including non-enumerable keys but excludes protype properties again. Otherwise, a ```for in``` loop can be used to iterate through an object and returns all emumerable properties including prototype properties but does not accesses getter or setter methods. Each property can then be used or manipulated in the associated loop code block.
 
 For example:
 
 ``` JavaScript
 // Using boy1 and boy2 as defined in the previous example block
 Object.keys(boy2)
-// Returns [ 'name' ]
+// [ 'name' ]
+// Does not include .grade prototype property or getter or setter methods
 Object.getOwnPropertyNames(boy2)
-// Returns [ 'name', 'getName', 'setName' ]
+// [ 'name', 'getName', 'setName' ]
+// Does not include prototype property
 for (property in boy2) {console.log(property)}
 // Console shows:
 // name
 // grade
+// Iterates through properties but excludes getter and setter methods
 for (property in boy2) {
     boy2[property] = "Freshman"
 }
+// Iterates through properties besides getter and setter methods and assigns them the string value "Freshman" in the code block for each loop
 for (property in boy2) {console.log(boy2[property])}
 // Console shows:
 // Freshman
 // Freshman
 ```
 
-There are multiple, powerful ways to manipulate objects in JavaScript targeting individual instances or all instances constructed using the same function. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
+There are multiple, powerful ways to manipulate objects in JavaScript targeting individual instances or all instances creater using the same constructor. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
 
 ### References
 
@@ -585,11 +603,9 @@ MDN Web Docs (2024) _[Working with objects](https://developer.mozilla.org/en-US/
 
 ## Q12. Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
-- Demonstrates an extensive ability to manipulate JSON
+JSON (JavaScript Object Notation) is a text-based format designed for transporting data as a string that can be with converted to be interpreted as an object. Formatting data as a string means it can be handled by more applications, including apps built using different programming languages, making JSON files convenient for sharing information (MDN Web Docs, 2024b).
 
-JSON (JavaScript Object Notation) is a text-based format designed for transporting data as a string that can be, later, interpreted as an object. Formatting data as a string means it can be handled by more applications, including different applications using different native language, making JSON files convenient for sharing (MDN Web Docs, 2024b).
-
-JSON can only handle particular JavaScript data types and has formatting rules that differ from typical JavaScript objects. JSON supports arrays, strings, booleans, the ```null``` value and nested objects that contain these values. However, strings must be contained in double-quotes, numbers cannot begin with 0 and the ```NaN``` and ```Infinity``` number values cannot be used. This also means that ```BigInt```, ```undefined``` and ```Symbol``` values cannot be stored in their natural formats, neither can functions.
+JSON can only handle particular JavaScript data types and has formatting rules that differ from typical JavaScript objects. JSON supports arrays, strings, booleans, the ```null``` value and nested objects that contain these values. However, strings must be contained in double-quotes, numbers cannot begin with 0 and the ```NaN``` and ```Infinity``` number values cannot be used. This also means that ```BigInt```, ```undefined``` and ```Symbol``` values cannot be stored in their natural formats, nor can functions.
 
 JavaScript has a ```JSON``` global object with key methods to utilise and generate JSON files. ```JSON.parse()``` accepts a JSON string and returns a JavaScript object populated with the string's data. Inversely, ```JSON.stringify()``` converts a JavaScript object to a JSON string.
 
@@ -611,6 +627,7 @@ JSON.stringify(house)
 let mrSquirell = {aspirations: undefined}
 JSON.stringify(mrSquirell)
 // Returns: '{}'
+// JSON does not accept the undefined value
 ```
 
 Once a JSON string has been converted to a JavaScript object, it can be manipulated in any way that an object can. By extension, any value in the object can be accessed using string or dot notation.
@@ -626,11 +643,12 @@ cat = JSON.parse(cat)
 // Converting cat from JSON string to JS object:
 cat.hobbies[1]['martial arts'][0]
 // 'karate'
+// cat object can be manipulated like a typical JS object
 ```
 
-Whilst JSON does not accept particular datatypes, developers can work around this by storing data in different formats for later conversion. For example, a phone number cannot be stored as a number value in JavaScript objects or JSON alike because it begins with a 0 and contains too main digits. Instead, a phone number could be stored as a string. In a unique case, ```BigInt``` values cannot be converted to JSON strings using ```JSON.stringify()``` and will raise an error but this can be worked around by writing a custom prototype function to handle their automatic conversion (MDN Web Docs, 2024a and MDN Web Docs, 2024c).
+Whilst JSON does not accept particular data types, developers can work around this by storing data in different formats for later conversion. For example, a phone number cannot be stored as a number value in JavaScript objects or JSON alike because it begins with a 0 and contains too many digits. Instead, a phone number could be stored as a string. In a unique case, ```BigInt``` values cannot be converted to JSON strings using ```JSON.stringify()``` and will raise an error but this can be worked around by writing a custom prototype function to handle the data type's automatic conversion (MDN Web Docs, 2024a and MDN Web Docs, 2024c).
 
-The ```JSON.stringify()``` method provides another method to manipulate JSON objects via its second parameter: ```replacer```. The ```replacer``` parameter can be an array containing designated key values, listed as strings, to contain in the JSON string or a function that returns any key or value to include.
+The ```JSON.stringify()``` method provides another choice for manipulating JSON objects via its second parameter: ```replacer```. The ```replacer``` parameter can be an array containing designated key values, listed as strings, to contain in the returned JSON string, or it can be a function that returns any key or value to include.
 
 For example:
 
@@ -642,8 +660,7 @@ JSON.stringify(bigObj)
 // Throws:
 // Uncaught TypeError: Do not know how to serialize a BigInt
 BigInt.prototype.toJSON = function () { return this.toString() }
-// Specifies how to handle BigInt objects when they are parsed by JSON.stringify()
-// This method converts it to a string
+// Defines a process for BigInt objects to be converted to the string data type when a BigInt value is parsed by the JSON.stringify() method
 JSON.stringify(bigObj)
 // Returns: 
 // '{"value":"111222333444"}'
@@ -652,12 +669,14 @@ let numbers = {a: 2, b: 3}
 JSON.stringify(example, (key, value) => {if (value != '2') {return value}})
 // Returns:
 // '{"b":3}'
+// replacer parameter is passed a function that returns keys without a value of 2
 JSON.stringify(example, ['b'])
 // Returns:
 // '{"b":3}'
+// replacer parameter is set to key values of b, generated JSON string only contains key-pair value "b":3
 ```
 
-Another useful way to utilise and manipulate JSON within JavaScript is to save and access it using the browser's ```sessionStorage``` or ```localStorage```. ```sessionStorage``` is an amount of memory in a browser that can hold data until the session ends whilst ```localStorage``` is an amount of memory that perseveres until a user deletes it. Both of these objects accept string data and can be accessed and saved-to in JavaScript scripts, making them perfect for caching JSON when creating web applications (W3 Schools, 2024).
+Another useful way to utilise and manipulate JSON within JavaScript is to save and access it using a browser's ```sessionStorage``` or ```localStorage```. ```sessionStorage``` is an amount of memory in a browser that can hold data until the session ends whilst ```localStorage``` is an amount of memory that perseveres until a user deletes it. Both of these objects accept string data and can be accessed and altered in JavaScript scripts, making them perfect for caching JSON when creating web applications for fast loading (W3 Schools, 2024).
 
 For example:
 
@@ -665,14 +684,14 @@ For example:
 let usefulData = {content: "Don't forget to brush your teeth each night"}
 let usefulJSON = JSON.stringify(usefulData)
 localStorage.setItem("storedExample", usefulJSON)
-// Saves the usefulJSON string as "storedExample" in local storage
+// Saves the usefulJSON JSON string as "storedExample" in brower's local storage
 
 let retrievedString = localStorage.getItem("storedExample");
 let retrievedJSON = JSON.parse(restievedString);
-// The JSON string is retrieved from local storage and converted to a JSON object for later manipulation, mirroring the original usefulData object
+// The "storedExample" JSON string is retrieved from local storage and converted to a JSON object for later manipulation, mirroring the original usefulData object
 ```
 
-JSON is a popular and convenient format to send and receive data to be handled by different coding languages. Within JavaScript, the ```JSON``` global object and its methods provide convenient conversion tools that allow users to handle JSON formatting easily. These methods have notable customisable options that should be considered to handle differently-typed data. In addition, JSON formatting is particularly useful for caching data in browsers when creating web applications.
+JSON is a popular and convenient format to send and receive data to be handled by different coding languages. Within JavaScript, the ```JSON``` global object and its methods provide convenient conversion tools that allow users to handle JSON formatting easily. These methods have customisable options that should be considered to handle differently-typed data. In addition, JSON formatting is particularly useful for caching data in browsers when creating web applications.
 
 ### References
 
