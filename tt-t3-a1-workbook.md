@@ -413,7 +413,7 @@ colours.length
 // 7
 ```
 
-There are a variety of data type methods that can be used to alter arrays. These methods can be split into two categories: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative both being functions that return a value from an array (MDN Web Docs, 2024). Other methods are used to change the values in an array such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the index order of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which mimics ```push()``` and returns a copy array of the given arguments with the x value as the first value(s), ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
+There are a variety of data type methods that can be used to alter arrays. These methods can be split into two categories: mutating methods and copying methods. Mutating methods alter the array that the method is applied to whilst copying methods create and return a shallow copy of the array with specified alterations. Mutating methods often have a non-mutating counterpart such as ```pop()```, a mutating method, and ```slice(0, -1)```, a non-mutating alternative both being functions that return a value from an array (MDN Web Docs, 2024a). Other methods are used to change the values in an array such as ```push()``` which adds a value to the end of an array, ```reverse()``` which reverses the index order of an array and ```shift()``` which removes the first value of an array and returns it. Their non-altering alternatives are ```concat([x, arrayName])``` which mimics ```push()``` and returns a copy array of the given arguments with the x value as the first value(s), ```toReversed()``` which returns a reverse-ordered copy of an array and ```slice(1)``` which which returns a copy of the array with the values after the provided index.
 
 For example:
 
@@ -461,11 +461,45 @@ console.log(colours)
 // colours array was mutated by .sort()
 ```
 
+Destructuring and the spread syntax are additional tools for manipulating and generating arrays. The destructuring assignment syntax allows developers to record an array's indexes to variables in a short-hand way by listing variable names on the left side of an assignment expression to assume each value in an array described on the right side. Commas can be used to skip values and the rest property ```...``` can be used to group multiple indexes into a single variable. The spread syntax is also called using the ```...``` notation but, instead of combining multiple values at once, it unpacks the values stored in a variable as though they were listed individually, essentially the opposite of the rest property's usage (MDN Web Docs, 2024b). The spread syntax can quickly incorporate an array's indexes into a new array. Both techniques allow for quick array alterations.
+
+For example:
+
+```Javascript
+let cats = ['Bruce', 'Joel', 'Noel']
+// Initialises cats array
+[cat1, cat2, cat3] = cats
+// Uses destructuring assignment to initialise cat1, cat2, cat3 variables and assign them to match cats values
+console.log(cat1)
+// Console shows:
+// 'Bruce"
+console.log(cat3)
+// Console shows:
+// 'Noel"
+
+sauces = ['mustard', 'mayo', 'tomato', 'chili', 'sriracha']
+// [ 'mustard', 'mayo', 'tomato', 'chili', 'sriracha' ]
+[,,...redSauces] = sauces
+// Commas skip first two indees, rest property assigns remaining values to variable redSauces
+console.log(redSauces)
+// Console shows:
+// [ 'tomato', 'chili', 'sriracha' ]
+
+let bestSauces = ['mayo', 'satay', ...redSauces]
+// initialises bestSauces, adds values and uses spread syntax to unpack and add all redSauces values
+console.log(bestSauces)
+// Console shows:
+// [ 'mayo', 'satay', 'tomato', 'chili', 'sriracha' ]
+
+```
+
 Arrays can be manipulated in various ways making them flexible tools for data storage. Arrays' iterative methods are particularly powerful for batch editing or altering according to sophisticated criteria. Essentially, arrays can be altered in mutative and non-mutative ways and there are always different techniques to achieve each type of alteration.
 
 ### References
 
-MDN Web Docs (2024) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)_, MDN Web Docs website, accessed 31 July 2024.
+MDN Web Docs (2024a) _[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)_, MDN Web Docs website, accessed 31 July 2024.
+
+MDN Web Docs (2024b) _[Desctructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)_, MDN Web Docs website, accessed 11 August 2024.
 
 ## Q11. Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language /6
 
@@ -593,6 +627,37 @@ for (property in boy2) {console.log(boy2[property])}
 // Console shows:
 // Freshman
 // Freshman
+```
+
+Finally, objects can also take advantage of destructuring assignment and the spread operator. When used with objects, destructuring requires reference to the object's property names and will "extract" those key values and make them regularly accessible variables. The rest property can, again, be used to initialise a variable with the remaining values of an assignment, in this context as an object containing the unassigned keys and values, whilst the spread syntax can be used to convert an array into an object by assigning the array's indexes as the object keys.
+
+For example:
+
+```Javascript
+let myJobs = {morning: 'smoothie blender', afternoon: 'office clerk', night: 'superhero'}
+// Initialises myJobs as an object
+{ night } = myJobs
+// Unpacks night key to a variable
+console.log(night)
+// Console shows:
+// 'superhero'
+{ morning, ...responsibilities } = myJobs
+// Unpacks morning value and makes it a variable and assigns remaining key values to variable responsibilities
+console.log(responsibilities)
+// Console shows:
+// { afternoon: 'office clerk', night: 'superhero' }
+
+let sauces = [ 'mustard', 'mayo', 'tomato', 'chili', 'sriracha' ]
+myFavToppings = {...sauces}
+// myFavToppings variable is assigned by spreading sauces' values and their index values:
+// {
+//  '0': 'mustard',
+//  '1': 'mayo',
+//  '2': 'tomato',
+//  '3': 'chili',
+//  '4': 'sriracha'
+// }
+
 ```
 
 There are multiple, powerful ways to manipulate objects in JavaScript targeting individual instances or all instances creater using the same constructor. The different object methods have distinct use cases and can be chained creatively to alter stored data easily.
